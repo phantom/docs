@@ -50,7 +50,7 @@ const signature = await connection.sendRawTransaction(signedTransaction.serializ
 It is also possible to sign and send multiple transactions at once. This is exposed through the `signAllTransactions` method on the provider.
 
 {% tabs %}
-{% tab title="signAllTransactions" %}
+{% tab title="signAllTransactions\(\)" %}
 ```javascript
 const signedTransactions = await window.solana.signAllTransactions(transactions);
 ```
