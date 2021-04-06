@@ -30,7 +30,7 @@ When the user has accepted the request to connect, the provider will emit a `con
 window.solana.on('connect' () => console.log("connected!"))
 ```
 
-Once the web application is connected to Phantom, it will be able to read the connected account's public key and send transactions. It also exposes a convenience `isConnect` boolean, and will indicate whether automatic transaction approvals have been enabled by the user.
+Once the web application is connected to Phantom, it will be able to read the connected account's public key and send transactions. It also exposes a convenience `isConnected` boolean, and will indicate whether automatic transaction approvals have been enabled by the user.
 
 ```javascript
 window.solana.publicKey.toString()
