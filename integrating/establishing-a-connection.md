@@ -35,7 +35,7 @@ Once the web application is connected to Phantom, it will be able to read the co
 ```javascript
 window.solana.publicKey.toString()
 // 26qv4GCcx98RihuK3c4T6ozB3J7L6VwCuFVc7Ta2A3Uo 
-window.solana.isConnect
+window.solana.isConnected
 // true
 window.solana.autoApprove
 // true or false
