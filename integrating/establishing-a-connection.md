@@ -27,7 +27,7 @@ window.solana.request({ method: "connect" })
 When the user has accepted the request to connect, the provider will emit a `connect` event.
 
 ```javascript
-window.solana.on('connect' () => console.log("connected!"))
+window.solana.on("connect", () => console.log("connected!"))
 ```
 
 Once the web application is connected to Phantom, it will be able to read the connected account's public key and send transactions. It also exposes a convenience `isConnect` boolean, and will indicate whether automatic transaction approvals have been enabled by the user.
@@ -39,6 +39,39 @@ window.solana.isConnect
 // true
 window.solana.autoApprove
 // true or false
+```
+
+## Eagerly Connecting
+
+After a web application connects to Phantom for the first time it becomes trusted, and it is possible for the application to automatically connect to Phantom on subsequent visits, or page refreshes. This is often called "eagerly connecting".
+
+To implement this, Phantom allows an `onlyIfTrusted` option to be passed into the `connect()` call. 
+
+{% tabs %}
+{% tab title="connect\(\)" %}
+```javascript
+window.solana.connect({ onlyIfTrusted: true });
+```
+{% endtab %}
+
+{% tab title="request\(\)" %}
+```javascript
+window.solana.request({ method: "connect", params: { onlyIfTrusted: true }});
+```
+{% endtab %}
+{% endtabs %}
+
+When using this flag, Phantom will only connect and emit a `connect` event if the application is trusted. Therefore, this can be safely called on page load for new users, as they won't be bothered by a pop-up window even if they have never connected to Phantom.
+
+Here is an example of how you might use this to implement "eagerly connecting" in a React application.
+
+```javascript
+import { useEffect } from "react";
+
+useEffect(() => {
+    // Will either automatically connect to Phantom, or do nothing.
+    window.solana.connect({ onlyIfTrusted: true });
+}, []);
 ```
 
 ## Disconnecting
