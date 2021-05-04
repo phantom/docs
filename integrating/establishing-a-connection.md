@@ -1,6 +1,6 @@
 # Establishing a Connection
 
-In order to start interacting with Phantom you must first establish a connection. This connection request will prompt the user for permission to share their public key, and indicate that they are willing to interact further. 
+In order to start interacting with Phantom you must first establish a connection. This connection request will prompt the user for permission to share their public key, and indicate that they are willing to interact further.
 
 Once permission is established the first time, the web application's domain will be whitelisted for future connection requests. The user may also indicate that they are willing to auto-approve certain transactions from the application as well.
 
@@ -45,7 +45,7 @@ window.solana.autoApprove
 
 After a web application connects to Phantom for the first time it becomes trusted, and it is possible for the application to automatically connect to Phantom on subsequent visits, or page refreshes. This is often called "eagerly connecting".
 
-To implement this, Phantom allows an `onlyIfTrusted` option to be passed into the `connect()` call. 
+To implement this, Phantom allows an `onlyIfTrusted` option to be passed into the `connect()` call.
 
 {% tabs %}
 {% tab title="connect\(\)" %}
@@ -95,6 +95,4 @@ window.solana.request({ method: "disconnect" });
 ```javascript
 window.solana.on('disconnect' () => console.log("disconnected!"))
 ```
-
-
 

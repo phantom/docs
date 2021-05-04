@@ -12,7 +12,7 @@ For more information about the nature of transactions on Solana, it is recommend
 
 For a sample transaction check out our developer sandbox.
 
-{% page-ref page="../sandbox.md" %}
+{% page-ref page="../resources/sandbox.md" %}
 
 ## Signing a Transaction
 

@@ -11,8 +11,7 @@
 
 ## Resources
 
----
-
-* [Sandbox](sandbox.md)
-* [FAQ](faq.md)
+* [Sandbox](resources/sandbox.md)
+* [Assets](resources/assets.md)
+* [FAQ](resources/faq.md)
 
