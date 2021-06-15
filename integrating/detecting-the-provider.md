@@ -4,7 +4,7 @@ The Phantom browser extension will inject an object called`solana` on the [windo
 
 To detect if a browser extension using this API is installed, you can check for the existence of the `solana` object.
 
-To make it easy to detect Phantom specifically, the extension will add an additional `isPhantom` flag.
+To make it easy to detect Phantom specifically, the extension adds an additional `isPhantom` flag.
 
 ```javascript
 const isPhantomInstalled = window.solana && window.solana.isPhantom
