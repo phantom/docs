@@ -8,7 +8,7 @@ If Phantom cannot identify a particular mint as an NFT, it will display the toke
 
 ## Token Metadata Program
 
-The **recommended** way of specifying metadata for a specific mint is to use the [Token Metadata Program](https://github.com/metaplex-foundation/metaplex/tree/master/rust/token-metadata/program), which allows you to map a mint address to an on-chain account with the relevant data.
+The best way of specifying metadata for a specific mint is to use the [Token Metadata Program](https://github.com/metaplex-foundation/metaplex/tree/master/rust/token-metadata/program), which allows you to map a mint address to an on-chain account with the relevant data.
 
 The address of the program is: `metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s`. 
 
