@@ -1,6 +1,6 @@
 # Fungible Tokens
 
-For fungible token metadata, Phantom currently searches the [@solana/spl-token-registry](https://github.com/solana-labs/token-list), which adheres to the [Token Lists standard](https://tokenlists.org/).
+For fungible token metadata, Phantom currently uses the [@solana/spl-token-registry](https://github.com/solana-labs/token-list), which adheres to the [Token Lists standard](https://tokenlists.org/).
 
 | Field | Description |
 | :--- | :--- |

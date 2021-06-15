@@ -2,7 +2,7 @@
 
 On Solana, NFTs are simply [SPL Tokens](https://spl.solana.com/token#example-create-a-non-fungible-token), often, but not necessarily, with 0 decimals and a supply of 1. Phantom will display tokens as "Collectibles" in their own dedicated tab when they are identified as such.
 
-If Phantom cannot identify a particular mint as an NFT, it will display the token as a fungible token instead. This means that tokens which Phantom knows nothing about will by default appear in the main token list.
+If Phantom cannot identify a particular mint as an NFT, it will display the token as a fungible token instead. This means that tokens which Phantom knows nothing about will appear in the main token list.
 
 ![An NFT with metadata defined being displayed in Phantom](../../.gitbook/assets/nft-detail-.png)
 
@@ -18,7 +18,7 @@ You can read more about the metadata standard in the [Metaplex Developer Guide](
 
 ### Metadata Structure
 
-The on-chain metadata current contains the following information.
+The on-chain metadata contains the following fields, only a few of which are displayed by Phantom.
 
 | Field | Description | Used  |
 | :--- | :--- | :--- |
@@ -30,7 +30,7 @@ The on-chain metadata current contains the following information.
 
 ### URI JSON Schema
 
-The URI JSON schema is compatible with the [ERC1155 JSON Schema](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1155.md#erc-1155-metadata-uri-json-schema), as well as the as the [OpenSea NFT Metadata Standard](ashttps://docs.opensea.io/docs/metadata-standards#section-metadata-structure), which specifies additional fields.
+The URI JSON schema is compatible with the [ERC1155 JSON Schema](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1155.md#erc-1155-metadata-uri-json-schema), as well as the [OpenSea NFT Metadata Standard](ashttps://docs.opensea.io/docs/metadata-standards#section-metadata-structure), which specifies additional fields.
 
 Here are the fields that Phantom makes use of.
 
