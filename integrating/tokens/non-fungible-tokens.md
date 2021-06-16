@@ -30,7 +30,7 @@ The on-chain metadata contains the following fields, only a few of which are dis
 
 ### URI JSON Schema
 
-The URI JSON schema is compatible with the [ERC1155 JSON Schema](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1155.md#erc-1155-metadata-uri-json-schema), as well as the [OpenSea NFT Metadata Standard](ashttps://docs.opensea.io/docs/metadata-standards#section-metadata-structure), which specifies additional fields.
+The URI JSON schema is compatible with the [ERC1155 JSON Schema](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1155.md#erc-1155-metadata-uri-json-schema), as well as the [OpenSea NFT Metadata Standard](https://docs.opensea.io/docs/metadata-standards#section-metadata-structure), which specifies additional fields.
 
 Here are the fields that Phantom makes use of.
 
@@ -40,6 +40,7 @@ Here are the fields that Phantom makes use of.
 | `name` | Name of the item. |
 | `description` | A human readable description of the item. |
 | `animation_url` | A URL to a multi-media attachment for the item. Currently only 3d models \(`.glb` and `.gltf` \) are supported. The type of file is derived from the file extension, or a `?ext=` query param. |
+| `attributes` | A list of attributes to display below the item. Formatted the same way as [OpenSea attributes](https://docs.opensea.io/docs/metadata-standards#section-attributes). |
 | `properties.files` | An array of objects specifying a `uri` and a `type` for files that are associated with the item. The `type` represents the file extension. |
 
   
