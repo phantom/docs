@@ -93,6 +93,6 @@ window.solana.request({ method: "disconnect" });
 {% endtabs %}
 
 ```javascript
-window.solana.on('disconnect' () => console.log("disconnected!"))
+window.solana.on('disconnect', () => console.log("disconnected!"))
 ```
 
