@@ -9,6 +9,8 @@ In order to send a message for the user to sign, the web application must:
 
 The developer sandbox provides an example of signing a message.
 
+Refer to [tweetnacl-js](https://github.com/dchest/tweetnacl-js/blob/master/README.md#naclsigndetachedverifymessage-signature-publickey) for verifying the signature of a message.
+
 {% page-ref page="../resources/sandbox.md" %}
 
 {% tabs %}
