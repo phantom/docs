@@ -32,18 +32,20 @@ The on-chain metadata contains the following fields, only a few of which are dis
 
 ### URI JSON Schema
 
-The [URI JSON Schema](https://docs.metaplex.com/nft-standard#uri-json-schema) is compatible with the [ERC1155 JSON Schema](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1155.md#erc-1155-metadata-uri-json-schema), as well as the [OpenSea NFT Metadata Standard](https://docs.opensea.io/docs/metadata-standards#section-metadata-structure), which specifies additional fields.
+Phantom uses the [URI JSON Schema](https://docs.metaplex.com/nft-standard#uri-json-schema) which comes from the [Solana NFT Metadata Standard](https://docs.metaplex.com/nft-standard) and is compatible with the [OpenSea NFT Metadata Standard](https://docs.opensea.io/docs/metadata-standards#section-metadata-structure), which specifies additional fields.
 
 Here are the fields that Phantom makes use of.
 
 | Field | Description |
 | :--- | :--- |
-| `image` | This is the URL to the image of the item. |
+| `image` | The URL to the image of the item. |
 | `name` | The name of the item. |
 | `description` | A human readable description of the item. |
-| `animation_url` | A URL to a multi-media attachment for the item. The type of file is derived from the file extension, or a `?ext=` query param. |
+| `animation_url` | A URL to a multi-media attachment for the item. The type of file is derived from the file extension, or a `?ext=` query param.   ****Phantom does not currently support HTML pages from the animation\_url. |
+| `external_url` | The URL that will appear below the item's description and will allow users to leave Phantom and view the item on your site. |
 | `attributes` | A list of attributes to display below the item. Formatted the same way as [OpenSea attributes](https://docs.opensea.io/docs/metadata-standards#section-attributes). |
 | `properties.files` | An array of objects specifying a `uri` and a `type` for files that are associated with the item. The `type` represents the file extension. |
+| `properties.category` | The primary category of the item that Phantom uses to serve the correct experience for the item. |
 
   
 
