@@ -11,7 +11,7 @@ Phantom is integrated in major Solana projects, many of which are open source. H
 * [Bonfida](https://bonfida.com)
 * [Star Atlas](https://staratlas.com/)
 * [Serum DEX](https://github.com/project-serum/serum-dex-ui/blob/master/src/wallet-adapters/phantom/index.tsx)
-* [sol-wallet-adapter](https://github.com/project-serum/sol-wallet-adapter)
+* [Solana Wallet Adapter](https://github.com/solana-labs/wallet-adapter/)
 
 
 
