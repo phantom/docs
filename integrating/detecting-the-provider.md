@@ -1,6 +1,6 @@
 # Detecting the Provider
 
-The Phantom browser extension will inject an object called`solana` on the [window](https://developer.mozilla.org/en-US/docs/Web/API/Window) object of any web application the user visits.
+The Phantom browser extension will inject an object called`solana` on the [window](https://developer.mozilla.org/en-US/docs/Web/API/Window) object of any web application the user visits. The `solana` object is also available on `window.phantom` to prevent namespace collisions.
 
 To detect if a browser extension using this API is installed, you can check for the existence of the `solana` object.
 

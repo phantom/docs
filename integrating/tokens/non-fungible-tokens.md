@@ -6,19 +6,9 @@ If Phantom cannot identify a particular mint as an NFT, it will display the toke
 
 ![An NFT with metadata defined being displayed in Phantom](../../.gitbook/assets/nft-detail-.png)
 
-## Token Metadata Program
+### On-Chain Metadata
 
-In order to specify metadata for a specific mint you must use the [Token Metadata Program](https://github.com/metaplex-foundation/metaplex/tree/master/rust/token-metadata/program), which allows you to map a mint address to an on-chain account with the relevant data.
-
-The address of the program is: `metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s`. 
-
-{% hint style="info" %}
-You can read more about the metadata standard in the [Solana NFT Metadata Standard](https://docs.metaplex.com/nft-standard) guide.
-{% endhint %}
-
-### Metadata Structure
-
-The on-chain metadata contains the following fields, only a few of which are displayed by Phantom.
+For non-fungible tokens Phantom uses the following fields from the [On-Chain Metadata](on-chain-metadata.md).
 
 | Field | Description | Used  |
 | :--- | :--- | :--- |
@@ -32,7 +22,7 @@ The on-chain metadata contains the following fields, only a few of which are dis
 
 ### URI JSON Schema
 
-Phantom uses the [URI JSON Schema](https://docs.metaplex.com/nft-standard#uri-json-schema) which comes from the [Solana NFT Metadata Standard](https://docs.metaplex.com/nft-standard) and is compatible with the [OpenSea NFT Metadata Standard](https://docs.opensea.io/docs/metadata-standards#section-metadata-structure), which specifies additional fields.
+Phantom uses the [URI JSON Schema](https://docs.metaplex.com/nft-standard#uri-json-schema) which comes from the [Token Meta-data Standard](https://docs.metaplex.com/nft-standard) and is compatible with the [OpenSea NFT Metadata Standard](https://docs.opensea.io/docs/metadata-standards#section-metadata-structure), which specifies additional fields.
 
 Here are the fields that Phantom makes use of.
 

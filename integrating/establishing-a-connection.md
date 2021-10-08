@@ -13,32 +13,44 @@ The **recommended** and **easiest** way to connect to Phantom is by calling `win
 {% tabs %}
 {% tab title="connect\(\)" %}
 ```javascript
-window.solana.connect();
+try {
+    const resp = await window.solana.connect();
+    resp.publicKey.toString()
+    // 26qv4GCcx98RihuK3c4T6ozB3J7L6VwCuFVc7Ta2A3Uo 
+} catch (err) {
+    // { code: 4001, message: 'User rejected the request.' }
+}
 ```
 {% endtab %}
 
 {% tab title="request\(\)" %}
 ```javascript
-window.solana.request({ method: "connect" })
+try {
+    const resp = await window.solana.request({ method: "connect" });
+    resp.publicKey.toString()
+    // 26qv4GCcx98RihuK3c4T6ozB3J7L6VwCuFVc7Ta2A3Uo 
+} catch (err) {
+    // { code: 4001, message: 'User rejected the request.' }
+}
 ```
 {% endtab %}
 {% endtabs %}
 
-When the user has accepted the request to connect, the provider will emit a `connect` event.
+The call will return a Promise that resolves when the user has accepted the connection request, and reject \(throw when awaited\) when the user declines the request or closes the pop-up. See [Errors](errors.md) for a breakdown of error messages Phantom may emit.
+
+When the user has accepted the request to connect, the provider will also emit a `connect` event.
 
 ```javascript
 window.solana.on("connect", () => console.log("connected!"))
 ```
 
-Once the web application is connected to Phantom, it will be able to read the connected account's public key and send transactions. It also exposes a convenience `isConnected` boolean, and will indicate whether automatic transaction approvals have been enabled by the user.
+Once the web application is connected to Phantom, it will be able to read the connected account's public key and send transactions. It also exposes a convenience `isConnected` boolean.
 
 ```javascript
 window.solana.publicKey.toString()
 // 26qv4GCcx98RihuK3c4T6ozB3J7L6VwCuFVc7Ta2A3Uo 
 window.solana.isConnected
 // true
-window.solana.autoApprove
-// true or false
 ```
 
 ## Eagerly Connecting
