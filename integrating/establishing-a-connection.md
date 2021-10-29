@@ -11,7 +11,7 @@ Similarly, it is possible to terminate the connection both on the application an
 The **recommended** and **easiest** way to connect to Phantom is by calling `window.solana.connect()` . However, the provider also exposes a `request` JSON RPC interface.
 
 {% tabs %}
-{% tab title="connect\(\)" %}
+{% tab title="connect()" %}
 ```javascript
 try {
     const resp = await window.solana.connect();
@@ -23,7 +23,7 @@ try {
 ```
 {% endtab %}
 
-{% tab title="request\(\)" %}
+{% tab title="request()" %}
 ```javascript
 try {
     const resp = await window.solana.request({ method: "connect" });
@@ -36,7 +36,7 @@ try {
 {% endtab %}
 {% endtabs %}
 
-The call will return a Promise that resolves when the user has accepted the connection request, and reject \(throw when awaited\) when the user declines the request or closes the pop-up. See [Errors](errors.md) for a breakdown of error messages Phantom may emit.
+The call will return a Promise that resolves when the user has accepted the connection request, and reject (throw when awaited) when the user declines the request or closes the pop-up. See [Errors](errors.md) for a breakdown of error messages Phantom may emit.
 
 When the user has accepted the request to connect, the provider will also emit a `connect` event.
 
@@ -60,13 +60,13 @@ After a web application connects to Phantom for the first time it becomes truste
 To implement this, Phantom allows an `onlyIfTrusted` option to be passed into the `connect()` call.
 
 {% tabs %}
-{% tab title="connect\(\)" %}
+{% tab title="connect()" %}
 ```javascript
 window.solana.connect({ onlyIfTrusted: true });
 ```
 {% endtab %}
 
-{% tab title="request\(\)" %}
+{% tab title="request()" %}
 ```javascript
 window.solana.request({ method: "connect", params: { onlyIfTrusted: true }});
 ```
@@ -82,7 +82,13 @@ import { useEffect } from "react";
 
 useEffect(() => {
     // Will either automatically connect to Phantom, or do nothing.
-    window.solana.connect({ onlyIfTrusted: true });
+    window.solana.connect({ onlyIfTrusted: true })
+        .then(({ publicKey }) => {
+            // Handle successful eager connection
+        });
+        .catch(() => {
+            // Handle connection failure as usual
+        })
 }, []);
 ```
 
@@ -91,13 +97,13 @@ useEffect(() => {
 Disconnecting is similar to connecting, however, it is possible for the disconnection to originate from the wallet.
 
 {% tabs %}
-{% tab title="disconnect\(\)" %}
+{% tab title="disconnect()" %}
 ```javascript
 window.solana.disconnect();
 ```
 {% endtab %}
 
-{% tab title="request\(\)" %}
+{% tab title="request()" %}
 ```javascript
 window.solana.request({ method: "disconnect" });
 ```
@@ -107,4 +113,3 @@ window.solana.request({ method: "disconnect" });
 ```javascript
 window.solana.on('disconnect', () => console.log("disconnected!"))
 ```
-
