@@ -10,15 +10,15 @@ If Phantom cannot identify a particular mint as an NFT, it will display the toke
 
 For non-fungible tokens Phantom uses the following fields from the [On-Chain Metadata](on-chain-metadata.md).
 
-| Field | Description | Used  |
-| :--- | :--- | :--- |
-| `name` | The name of the item. | ✅ |
-| `symbol` | The symbol of the item.  | ❌ |
-| `uri` | URI to [ERC1155](https://0xjac.github.io/EIPs/EIPS/eip-1155) compatible JSON. | ✅ |
-| `creators` | An array of public keys for each creator of the item. | ❌ |
-| `update_authority` | The public key of the metadata owner. | ❌ |
-| `primary_sale_happened` | A boolean flag describing whether the primary sale of the item happened. | ❌ |
-| `seller_fee_basis_points` | Royalty basis points that goes to creators in secondary sales \(0-10000\). | ❌ |
+| Field                     | Description                                                                   | Used  |
+| ------------------------- | ----------------------------------------------------------------------------- | ----- |
+| `name`                    | The name of the item.                                                         | ✅     |
+| `symbol`                  | The symbol of the item.                                                       | ✅     |
+| `uri`                     | URI to [ERC1155](https://0xjac.github.io/EIPs/EIPS/eip-1155) compatible JSON. | ✅     |
+| `creators`                | An array of public keys for each creator of the item.                         | ❌     |
+| `update_authority`        | The public key of the metadata owner.                                         | ✅     |
+| `primary_sale_happened`   | A boolean flag describing whether the primary sale of the item happened.      | ❌     |
+| `seller_fee_basis_points` | Royalty basis points that goes to creators in secondary sales (0-10000).      | ❌     |
 
 ### URI JSON Schema
 
@@ -26,17 +26,29 @@ Phantom uses the [URI JSON Schema](https://docs.metaplex.com/nft-standard#uri-js
 
 Here are the fields that Phantom makes use of.
 
-| Field | Description |
-| :--- | :--- |
-| `image` | The URL to the image of the item. |
-| `name` | The name of the item. |
-| `description` | A human readable description of the item. |
-| `animation_url` | A URL to a multi-media attachment for the item. The type of file is derived from the file extension, or a `?ext=` query param.   ****Phantom does not currently support HTML pages from the animation\_url. |
-| `external_url` | The URL that will appear below the item's description and will allow users to leave Phantom and view the item on your site. |
-| `attributes` | A list of attributes to display below the item. Formatted the same way as [OpenSea attributes](https://docs.opensea.io/docs/metadata-standards#section-attributes). |
-| `properties.files` | An array of objects specifying a `uri` and a `type` for files that are associated with the item. The `type` represents the file extension. |
-| `properties.category` | The primary category of the item that Phantom uses to serve the correct experience for the item. |
+| Field                 | Description                                                                                                                                                                                                                                                                       |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `image`               | The URL to the image of the item.                                                                                                                                                                                                                                                 |
+| `name`                | The name of the item.                                                                                                                                                                                                                                                             |
+| `description`         | A human readable description of the item.                                                                                                                                                                                                                                         |
+| `animation_url`       | <p>A URL to a multi-media attachment for the item. The type of file is derived from the file extension, or a <code>?ext=</code> query param.<strong> </strong><br><strong></strong><br><strong></strong>Phantom does not currently support HTML pages from the animation_url.</p> |
+| `external_url`        | The URL that will appear below the item's description and will allow users to leave Phantom and view the item on your site.                                                                                                                                                       |
+| `attributes`          | A list of attributes to display below the item. Formatted the same way as [OpenSea attributes](https://docs.opensea.io/docs/metadata-standards#section-attributes).                                                                                                               |
+| `collection`          | An object containing collection `name` and `family`                                                                                                                                                                                                                               |
+| `properties.files`    | An array of objects specifying a `uri` and a `type` for files that are associated with the item. The `type` represents the file extension.                                                                                                                                        |
+| `properties.category` | The primary category of the item that Phantom uses to serve the correct experience for the item.                                                                                                                                                                                  |
 
-  
+### Grouping collectibles
 
+Phantom groups collectibles by the `update_authority` found on the on-chain metadata.
 
+When a group is created, a best-effort process is used to determine that group’s name. That is because not every collection includes all the uri schema json key / value pairs. The following data is therefore used in descending order of preference:
+
+1. `collection.family`
+2. `collection.name`
+3. `external_url` (parsed to remove url parts)
+4. `name` (of a single collectible)
+5. `symbol`
+6. `update_authority`
+
+Please add the above mentioned data if you are a creator and want your collection to be displayed properly in Phantom.&#x20;
