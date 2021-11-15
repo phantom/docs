@@ -38,9 +38,9 @@ Here are the fields that Phantom makes use of.
 | `properties.files`    | An array of objects specifying a `uri` and a `type` for files that are associated with the item. The `type` represents the file extension.                                                                                                                                        |
 | `properties.category` | The primary category of the item that Phantom uses to serve the correct experience for the item.                                                                                                                                                                                  |
 
-### Grouping collectibles
+### Grouping Non-Fungible Tokens
 
-Phantom groups collectibles by the `update_authority` found on the on-chain metadata.
+Phantom groups non-fungible tokens by the `update_authority` found on the on-chain metadata.
 
 When a group is created, a best-effort process is used to determine that group’s name. That is because not every collection includes all the uri schema json key / value pairs. The following data is therefore used in descending order of preference:
 
