@@ -15,8 +15,8 @@ For non-fungible tokens Phantom uses the following fields from the [On-Chain Met
 | `name`                    | The name of the item.                                                         | ✅     |
 | `symbol`                  | The symbol of the item.                                                       | ✅     |
 | `uri`                     | URI to [ERC1155](https://0xjac.github.io/EIPs/EIPS/eip-1155) compatible JSON. | ✅     |
-| `creators`                | An array of public keys for each creator of the item.                         | ❌     |
-| `update_authority`        | The public key of the metadata owner.                                         | ✅     |
+| `creators`                | An array of public keys for each creator of the item.                         | ✅     |
+| `update_authority`        | The public key of the metadata owner.                                         | ❌     |
 | `primary_sale_happened`   | A boolean flag describing whether the primary sale of the item happened.      | ❌     |
 | `seller_fee_basis_points` | Royalty basis points that goes to creators in secondary sales (0-10000).      | ❌     |
 
@@ -37,10 +37,11 @@ Here are the fields that Phantom makes use of.
 | `collection`          | An object containing collection `name` and `family`                                                                                                                                                                                                                               |
 | `properties.files`    | An array of objects specifying a `uri` and a `type` for files that are associated with the item. The `type` represents the file extension.                                                                                                                                        |
 | `properties.category` | The primary category of the item that Phantom uses to serve the correct experience for the item.                                                                                                                                                                                  |
+| `symbol`              | String symbol of the collec                                                                                                                                                                                                                                                       |
 
 ### Grouping Non-Fungible Tokens
 
-Phantom groups non-fungible tokens by the `update_authority` found on the on-chain metadata.
+Phantom groups non-fungible tokens by the first verified creator's address in the `creators` array found on the on-chain metadata.
 
 When a group is created, a best-effort process is used to determine that group’s name. That is because not every collection includes all the uri schema json key / value pairs. The following data is therefore used in descending order of preference:
 
@@ -49,6 +50,6 @@ When a group is created, a best-effort process is used to determine that group�
 3. `external_url` (parsed to remove url parts)
 4. `name` (of a single collectible)
 5. `symbol`
-6. `update_authority`
+6. address of the first verified creator in the `creators` array (also used to group the collection)
 
 Please add the above mentioned data if you are a creator and want your collection to be displayed properly in Phantom.&#x20;
