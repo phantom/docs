@@ -18,7 +18,7 @@ For a sample transaction check out our developer sandbox.
 
 ## Signing and Sending a Transaction
 
-Once a transaction is created, the web application may ask the user's Phantom wallet to sign and send the transaction using their account's private key and Solana JSON RPC connection. By far the **easiest **and **recommended **way of doing this is by using the `signAndSendTransaction` method on the provider, but it is also possible to do with `request`. In both cases, the call with return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise) for an object containing the `signature`.
+Once a transaction is created, the web application may ask the user's Phantom wallet to sign and send the transaction using their account's private key and Solana JSON RPC connection. By far the **easiest **and **recommended **way of doing this is by using the `signAndSendTransaction` method on the provider, but it is also possible to do with `request`. In both cases, the call will return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise) for an object containing the `signature`.
 
 {% tabs %}
 {% tab title="signAndSendTransaction()" %}
@@ -55,7 +55,7 @@ The following methods are still supported, but are no longer recommended and may
 
 ### Signing a Transaction
 
-Once a transaction is created, the web application may ask the user's Phantom wallet to sign the transaction using their account's private key. By far the **easiest **and **recommended **way of doing this is by using the `signTransaction` method on the provider, but it is also possible to do with `request`. In both cases, the call with return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise) for the signed transaction.
+Once a transaction is created, the web application may ask the user's Phantom wallet to sign the transaction using their account's private key. By far the **easiest **and **recommended **way of doing this is by using the `signTransaction` method on the provider, but it is also possible to do with `request`. In both cases, the call will return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise) for the signed transaction.
 
 {% tabs %}
 {% tab title="signTransaction()" %}
