@@ -26,18 +26,18 @@ Phantom uses the [URI JSON Schema](https://docs.metaplex.com/nft-standard#uri-js
 
 Here are the fields that Phantom makes use of.
 
-| Field                 | Description                                                                                                                                                                                                                                                                       |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `image`               | The URL to the image of the item.                                                                                                                                                                                                                                                 |
-| `name`                | The name of the item.                                                                                                                                                                                                                                                             |
-| `description`         | A human readable description of the item.                                                                                                                                                                                                                                         |
-| `animation_url`       | <p>A URL to a multi-media attachment for the item. The type of file is derived from the file extension, or a <code>?ext=</code> query param.<strong> </strong><br><strong></strong><br><strong></strong>Phantom does not currently support HTML pages from the animation_url.</p> |
-| `external_url`        | The URL that will appear below the item's description and will allow users to leave Phantom and view the item on your site.                                                                                                                                                       |
-| `attributes`          | A list of attributes to display below the item. Formatted the same way as [OpenSea attributes](https://docs.opensea.io/docs/metadata-standards#section-attributes).                                                                                                               |
-| `collection`          | An object containing collection `name` and `family`                                                                                                                                                                                                                               |
-| `properties.files`    | An array of objects specifying a `uri` and a `type` for files that are associated with the item. The `type` represents the file extension.                                                                                                                                        |
-| `properties.category` | The primary category of the item that Phantom uses to serve the correct experience for the item.                                                                                                                                                                                  |
-| `symbol`              | String symbol of the collec                                                                                                                                                                                                                                                       |
+| Field                 | Description                                                                                                                                                                                                                                                                        |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `image`               | The URL to the image of the item.                                                                                                                                                                                                                                                  |
+| `name`                | The name of the item.                                                                                                                                                                                                                                                              |
+| `description`         | A human readable description of the item.                                                                                                                                                                                                                                          |
+| `animation_url`       | <p>A URL to a multi-media attachment for the item. The type of file is derived from the file extension, or a <code>?ext=</code> query param. <strong></strong> <br><strong></strong><br><strong></strong>Phantom does not currently support HTML pages from the animation_url.</p> |
+| `external_url`        | The URL that will appear below the item's description and will allow users to leave Phantom and view the item on your site.                                                                                                                                                        |
+| `attributes`          | A list of attributes to display below the item. Formatted the same way as [OpenSea attributes](https://docs.opensea.io/docs/metadata-standards#section-attributes).                                                                                                                |
+| `collection`          | An object containing collection `name` and `family` (both should be strings)                                                                                                                                                                                                       |
+| `properties.files`    | An array of objects specifying a `uri` and a `type` for files that are associated with the item. The `type` represents the file extension.                                                                                                                                         |
+| `properties.category` | The primary category of the item that Phantom uses to serve the correct experience for the item.                                                                                                                                                                                   |
+| `symbol`              | String symbol of the collec                                                                                                                                                                                                                                                        |
 
 ### Grouping Non-Fungible Tokens
 
@@ -45,8 +45,8 @@ Phantom groups non-fungible tokens by the first verified creator's address in th
 
 When a group is created, a best-effort process is used to determine that group’s name. That is because not every collection includes all the uri schema json key / value pairs. The following data is therefore used in descending order of preference:
 
-1. `collection.family`
-2. `collection.name`
+1. `collection.name`
+2. `collection.family`
 3. `external_url` (parsed to remove url parts)
 4. `name` (of a single collectible)
 5. `symbol`
