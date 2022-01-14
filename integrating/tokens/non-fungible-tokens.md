@@ -22,7 +22,7 @@ For non-fungible tokens Phantom uses the following fields from the [On-Chain Met
 
 ### URI JSON Schema
 
-Phantom uses the [URI JSON Schema](https://docs.metaplex.com/nft-standard#uri-json-schema) which comes from the [Token Meta-data Standard](https://docs.metaplex.com/nft-standard) and is compatible with the [OpenSea NFT Metadata Standard](https://docs.opensea.io/docs/metadata-standards#section-metadata-structure), which specifies additional fields.
+Phantom uses the [URI JSON Schema](https://docs.metaplex.com/nft-standard#uri-json-schema) which comes from the [Token Meta-data Standard](https://docs.metaplex.com/token-metadata/v1.0.0/nft-standard) and is compatible with the [OpenSea NFT Metadata Standard](https://docs.opensea.io/docs/metadata-standards#section-metadata-structure), which specifies additional fields.
 
 Here are the fields that Phantom makes use of.
 
