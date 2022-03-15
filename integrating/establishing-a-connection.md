@@ -1,8 +1,6 @@
 # Establishing a Connection
 
-In order to start interacting with Phantom you must first establish a connection. This connection request will prompt the user for permission to share their public key, and indicate that they are willing to interact further.
-
-Once permission is established the first time, the web application's domain will be whitelisted for future connection requests. The user may also indicate that they are willing to auto-approve certain transactions from the application as well.
+In order to start interacting with Phantom, you must first establish a connection. This connection request will prompt the user for permission to share their public key, indicating that they are willing to interact further. Once permission is established the first time, the web application's domain will be whitelisted for future connection requests.&#x20;
 
 Similarly, it is possible to terminate the connection both on the application and the user side.
 
