@@ -4,7 +4,7 @@ On Solana, NFTs are simply [SPL Tokens](https://spl.solana.com/token#example-cre
 
 If Phantom cannot identify a particular mint as an NFT, it will display the token as a fungible token instead. This means that tokens which Phantom knows nothing about will appear in the main token list.
 
-![An NFT with metadata defined being displayed in Phantom](../../.gitbook/assets/nft-detail-.png)
+![An NFT with metadata defined being displayed in Phantom](<../../.gitbook/assets/NFT (Detail).png>)
 
 ### On-Chain Metadata
 
