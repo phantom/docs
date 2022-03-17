@@ -4,13 +4,13 @@ When making requests to Phantom in [Establishing a Connection](establishing-a-co
 
 | Code   | Title                 | Description                                                              |
 | ------ | --------------------- | ------------------------------------------------------------------------ |
-| 4001   | User Rejected Request | User rejected the request through Phantom.                               |
-| 4100   | Unauthorized          | The requested method and/or account has not been authorized by the user. |
 | 4900   | Disconnected          | Phantom could not connect to the network.                                |
-| -32603 | Internal Error        | Something went wrong within Phantom.                                     |
-| -32601 | Method Not Found      | Phantom does not recognize the method.                                   |
-| -32003 | Transaction Rejected  | Phantom does not the transaction as valid.                               |
+| 4100   | Unauthorized          | The requested method and/or account has not been authorized by the user. |
+| 4001   | User Rejected Request | The user rejected the request through Phantom.                           |
 | -32000 | Invalid Input         | Missing or invalid parameters.                                           |
+| -32003 | Transaction Rejected  | Phantom does not recognize a valid transaction.                          |
+| -32601 | Method Not Found      | Phantom does not recognize the method.                                   |
+| -32603 | Internal Error        | Something went wrong within Phantom.                                     |
 
 Typically, these errors will be easily parseable and have both a code and an explanation. For example:
 
