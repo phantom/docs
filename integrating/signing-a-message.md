@@ -1,20 +1,24 @@
 # Signing a Message
 
-When the web application is connected to Phantom, it can also request that the user signs a given message. 
+When a web application is connected to Phantom, it can also request that the user signs a given message. Applications are free to write their own messages which will be displayed to users from within Phantom's signature prompt. Message signatures do not involve network fees and are a convenient way for apps to verify ownership of an address.
 
-In order to send a message for the user to sign, the web application must: 
+In order to send a message for the user to sign, a web application must:&#x20;
 
-* Provide a hex or UTF-8 encoded string as a Uint8Array.
-* Have it be signed by the user's Phantom Wallet.
+1. Provide a **hex** or **UTF-8** encoded string as a Uint8Array.
+2. Request that the encoded message is signed via the user's Phantom wallet.
 
 The developer sandbox provides an example of signing a message.
 
-Refer to [tweetnacl-js](https://github.com/dchest/tweetnacl-js/blob/master/README.md#naclsigndetachedverifymessage-signature-publickey) for verifying the signature of a message.
+{% hint style="info" %}
+For more information on how to verify the signature of a message, please refer to [tweetnacl-js](https://github.com/dchest/tweetnacl-js/blob/master/README.md#naclsigndetachedverifymessage-signature-publickey).
+{% endhint %}
 
-{% page-ref page="../resources/sandbox.md" %}
+{% content-ref url="../resources/sandbox.md" %}
+[sandbox.md](../resources/sandbox.md)
+{% endcontent-ref %}
 
 {% tabs %}
-{% tab title="signMessage\(\)" %}
+{% tab title="signMessage()" %}
 ```javascript
 const message = `To avoid digital dognappers,
     sign below to authenticate with CryptoCorgis`;
@@ -23,7 +27,7 @@ const signedMessage = await window.solana.signMessage(encodedMessage, "utf8");
 ```
 {% endtab %}
 
-{% tab title="request\(\)" %}
+{% tab title="request()" %}
 ```javascript
 const message = `To avoid digital dognappers,
     sign below to authenticate with CryptoCorgis`;
@@ -38,4 +42,3 @@ const signedMessage = await window.solana.request({
 ```
 {% endtab %}
 {% endtabs %}
-

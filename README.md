@@ -17,5 +17,5 @@ At its core, Phantom works by creating and managing private keys on behalf of it
 
 To interact with web applications, Phantom injects a `solana` object into the javascript context of every site the user visits. A given application may then interact with Phantom, and ask for the user's permission to perform transactions, through this injected object.
 
-This documentation is intended for developers who are building applications with Phantom. To get help with using Phantom, please visit our [User Support Site](https://help.phantom.app).
+This documentation is intended for developers who are building applications with Phantom. To get help with using Phantom, please visit our [Help Center](https://help.phantom.app).
 

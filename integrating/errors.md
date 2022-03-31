@@ -1,6 +1,6 @@
 # Errors
 
-When making requests to Phantom in [Establishing a Connection](establishing-a-connection.md), [Sending a Transaction](sending-a-transaction.md), or [Signing a Message](signing-a-message.md), Phantom may respond with an error. Here are the error codes and their meanings. These are inspired the corresponding by [EIP-1474](https://eips.ethereum.org/EIPS/eip-1474#error-codes) and [EIP-1193](https://eips.ethereum.org/EIPS/eip-1193#provider-errors) on Ethereum.
+When making requests to Phantom in [Establishing a Connection](establishing-a-connection.md), [Sending a Transaction](sending-a-transaction.md), or [Signing a Message](signing-a-message.md), Phantom may respond with an error. The following is a list of all possible error codes and their meanings. These error messages are inspired by Ethereum's [EIP-1474](https://eips.ethereum.org/EIPS/eip-1474#error-codes) and [EIP-1193](https://eips.ethereum.org/EIPS/eip-1193#provider-errors).
 
 | Code   | Title                 | Description                                                              |
 | ------ | --------------------- | ------------------------------------------------------------------------ |

@@ -1,16 +1,18 @@
 # Sending a Transaction
 
-Once the web application is connected to Phantom, it can send transactions on behalf of the user, with the user's permission.
+Once a web application is connected to Phantom, it can prompt the user for permission to send transactions on their behalf.
 
-In order to send a transaction, the web application must:
+In order to send a transaction, a web application must:
 
-* Create an unsigned transaction or transactions.
-* Have it be signed and submitted to the network by the user's Phantom wallet.
-* Optionally await the confirmation using a Solana JSON RPC connection.
+1. Create an unsigned transaction.
+2. Have the transaction be signed and submitted to the network by the user's Phantom wallet.
+3. Optionally await network confirmation using a Solana JSON RPC connection.
 
-For more information about the nature of transactions on Solana, it is recommended to review the `solana-web3.js` [docs](https://solana-labs.github.io/solana-web3.js/) as well as the official [Solana docs](https://docs.solana.com/developing/programming-model/transactions).
+{% hint style="info" %}
+For more information about the nature of Solana transactions, please review the `solana-web3.js` [docs](https://solana-labs.github.io/solana-web3.js/) as well as the [Solana Cookbook](https://solanacookbook.com/core-concepts/transactions.html#transactions).
+{% endhint %}
 
-For a sample transaction check out our developer sandbox.
+For a sample Phantom transaction, check out our developer sandbox.
 
 {% content-ref url="../resources/sandbox.md" %}
 [sandbox.md](../resources/sandbox.md)
@@ -18,7 +20,7 @@ For a sample transaction check out our developer sandbox.
 
 ## Signing and Sending a Transaction
 
-Once a transaction is created, the web application may ask the user's Phantom wallet to sign and send the transaction using their account's private key and Solana JSON RPC connection. By far the **easiest** and **recommended** way of doing this is by using the `signAndSendTransaction` method on the provider, but it is also possible to do with `request`. In both cases, the call will return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise) for an object containing the `signature`.
+Once a transaction is created, the web application may ask the user's Phantom wallet to sign and send the transaction. If accepted, Phantom will sign the transaction with the user's private key and submit it via a Solana JSON RPC connection. By far the **easiest** and most **recommended** way of doing this is by using the `signAndSendTransaction` method on the provider, but it is also possible to do with `request`. In both cases, the call will return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise) for an object containing the `signature`.
 
 {% tabs %}
 {% tab title="signAndSendTransaction()" %}
@@ -55,7 +57,7 @@ The following methods are still supported, but are no longer recommended and may
 
 ### Signing a Transaction
 
-Once a transaction is created, the web application may ask the user's Phantom wallet to sign the transaction using their account's private key. By far the **easiest** and **recommended** way of doing this is by using the `signTransaction` method on the provider, but it is also possible to do with `request`. In both cases, the call will return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise) for the signed transaction.
+Once a transaction is created, a web application may ask the user's Phantom wallet to sign the transaction _without_ also submitting it to the network. The easiest and most recommended way of doing this is via the `signTransaction` method on the provider, but it is also possible to do via `request`. In both cases, the call will return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise) for the signed transaction. After the transaction has been signed, an application may submit the transaction itself via [web3js's ](https://solana-labs.github.io/solana-web3.js/classes/Connection.html#sendRawTransaction)`sendRawTransaction`.
 
 {% tabs %}
 {% tab title="signTransaction()" %}

@@ -1,16 +1,14 @@
 # Detecting the Provider
 
-The Phantom browser extension will inject an object called`solana` on the [window](https://developer.mozilla.org/en-US/docs/Web/API/Window) object of any web application the user visits. The `solana` object is also available on `window.phantom` to prevent namespace collisions.
+To detect if a user has already installed Phantom, an application should check for the existence of a `solana` object. Phantom's browser extension and mobile in-app browser will both inject a `solana` object into the [window](https://developer.mozilla.org/en-US/docs/Web/API/Window) of any web application the user visits. The `solana` object is also available on `window.phantom` to prevent namespace collisions.
 
-To detect if a browser extension using this API is installed, you can check for the existence of the `solana` object.
-
-To make it easy to detect Phantom specifically, the extension adds an additional `isPhantom` flag.
+To make it easy to detect Phantom specifically, Phantom also adds an additional `isPhantom` flag.
 
 ```javascript
 const isPhantomInstalled = window.solana && window.solana.isPhantom
 ```
 
-If Phantom is not installed, we recommend you redirect your users to [our website](https://phantom.app/). Altogether, this may look like the following.
+If Phantom is not installed, we recommend you redirect your users to [our website](https://phantom.app). Altogether, this may look like the following.
 
 ```javascript
 const getProvider = () => {
@@ -23,4 +21,3 @@ const getProvider = () => {
   window.open("https://phantom.app/", "_blank");
 };
 ```
-
