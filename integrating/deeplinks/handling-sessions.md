@@ -1,8 +1,8 @@
 # Handling Sessions
 
-When a user [connects to Phantom](provider-methods/connect.md) for the first time, Phantom will return a `session` param that represents the user's connection. The app should pass this `session` param back to Phantom on all subsequent methods (excluding [Browse](other-methods/browse.md)). It is the app's responsibility to store this `session`.
+When a user [connects to Phantom](provider-methods/connect.md) for the first time, Phantom will return a `session` param that represents the user's connection. The app should pass this `session` param back to Phantom on all subsequent [Provider Methods](provider-methods/). It is the app's responsibility to store this `session`.
 
-Sessions do not expire. Once a user has connected with Phantom, the corresponding app can indefinitely make requests such as [SignAndSendTransaction](provider-methods/signandsendtransaction.md) and [SignMessage](provider-methods/signmessage.md) without prompting the user to re-connect with Phantom. Apps will still need to re-connect to Phantom after a [Disconnect](provider-methods/disconnect.md) event or an [Invalid Session](handling-sessions.md#undefined).
+Sessions do not expire. Once a user has connected with Phantom, the corresponding app can indefinitely make requests such as [SignAndSendTransaction](provider-methods/signandsendtransaction.md) and [SignMessage](provider-methods/signmessage.md) without prompting the user to re-connect with Phantom. Apps will still need to re-connect to Phantom after a [Disconnect](provider-methods/disconnect.md) event or an [Invalid Session](handling-sessions.md#invalid-sessions).
 
 ### Session Structure
 
