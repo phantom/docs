@@ -9,14 +9,10 @@ In order to send a transaction, a web application must:
 3. Optionally await network confirmation using a Solana JSON RPC connection.
 
 {% hint style="info" %}
-For more information about the nature of Solana transactions, please review the `solana-web3.js` [docs](https://solana-labs.github.io/solana-web3.js/) as well as the [Solana Cookbook](https://solanacookbook.com/core-concepts/transactions.html#transactions).
+For more information about the nature of Solana transactions, please review the [`solana-web3.js` docs](https://solana-labs.github.io/solana-web3.js/) as well as the [Solana Cookbook](https://solanacookbook.com/core-concepts/transactions.html#transactions).
 {% endhint %}
 
-For a sample Phantom transaction, check out our developer sandbox.
-
-{% content-ref url="../resources/sandbox.md" %}
-[sandbox.md](../resources/sandbox.md)
-{% endcontent-ref %}
+For a sample Phantom transaction, check out our [developer sandbox](../../resources/sandbox.md#sandbox).
 
 ## Signing and Sending a Transaction
 
@@ -57,7 +53,7 @@ The following methods are still supported, but are no longer recommended and may
 
 ### Signing a Transaction
 
-Once a transaction is created, a web application may ask the user's Phantom wallet to sign the transaction _without_ also submitting it to the network. The easiest and most recommended way of doing this is via the `signTransaction` method on the provider, but it is also possible to do via `request`. In both cases, the call will return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise) for the signed transaction. After the transaction has been signed, an application may submit the transaction itself via [web3js's ](https://solana-labs.github.io/solana-web3.js/classes/Connection.html#sendRawTransaction)`sendRawTransaction`.
+Once a transaction is created, a web application may ask the user's Phantom wallet to sign the transaction _without_ also submitting it to the network. The easiest and most recommended way of doing this is via the `signTransaction` method on the provider, but it is also possible to do via `request`. In both cases, the call will return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise) for the signed transaction. After the transaction has been signed, an application may submit the transaction itself via [web3js's `sendRawTransaction`](https://solana-labs.github.io/solana-web3.js/classes/Connection.html#sendRawTransaction).
 
 {% tabs %}
 {% tab title="signTransaction()" %}

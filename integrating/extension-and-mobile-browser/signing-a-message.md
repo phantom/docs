@@ -7,15 +7,11 @@ In order to send a message for the user to sign, a web application must:&#x20;
 1. Provide a **hex** or **UTF-8** encoded string as a Uint8Array.
 2. Request that the encoded message is signed via the user's Phantom wallet.
 
-The developer sandbox provides an example of signing a message.
+The [developer sandbox](../../resources/sandbox.md#sandbox) provides an example of signing a message.
 
 {% hint style="info" %}
 For more information on how to verify the signature of a message, please refer to [tweetnacl-js](https://github.com/dchest/tweetnacl-js/blob/master/README.md#naclsigndetachedverifymessage-signature-publickey).
 {% endhint %}
-
-{% content-ref url="../resources/sandbox.md" %}
-[sandbox.md](../resources/sandbox.md)
-{% endcontent-ref %}
 
 {% tabs %}
 {% tab title="signMessage()" %}
