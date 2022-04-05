@@ -10,4 +10,4 @@ For a live example of a simple integration with the Phantom [browser extension](
 
 For a live demonstration of Phantom's deeplinking API, please review our React Native demo app on [GitHub](https://github.com/phantom-labs/deep-link-demo-app). This application can be run locally and interacted with on iOS and Android devices via [Expo CLI](https://docs.expo.dev/workflow/expo-cli/).&#x20;
 
-![An example of a deeplinking connect request](../.gitbook/assets/cover\_deeplinking-minfied.png)
+![A connect request to Magic Eden, initiated via a deeplink](../.gitbook/assets/cover\_deeplinking\_me-minified.png)
