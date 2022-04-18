@@ -1,6 +1,6 @@
 # Deeplinks
 
-As of Phantom `v22.04.01`, iOS apps can now natively interact with Phantom through either [universal links](https://developer.apple.com/ios/universal-links/) **(recommended)** or [deeplinks](https://en.wikipedia.org/wiki/Mobile\_deep\_linking). We also plan to extend this functionality to Android during the release of our Android wallet which is currently in beta.
+As of Phantom `v22.04.11`, iOS and Android apps can now natively interact with Phantom through either [universal links](https://developer.apple.com/ios/universal-links/) **(recommended)** or [deeplinks](https://en.wikipedia.org/wiki/Mobile\_deep\_linking). We refer to both of these workflows collectively as "deeplinks".
 
 All [Provider Methods](provider-methods/) will follow a protocol format of:
 

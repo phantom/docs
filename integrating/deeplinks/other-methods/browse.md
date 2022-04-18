@@ -4,6 +4,10 @@ Deeplinks provide a convenient way for users to open web apps within Phantom. Us
 
 The `browse` deeplink can be used before a [Connect](../provider-methods/connect.md) event takes places, as it does not require a `session` param. Please review [Extension & Mobile Browser](../../extension-and-mobile-browser/) for more information on how apps can interact with Phantom from within the in-app browser.
 
+{% hint style="info" %}
+`browse` deeplinks are not intended to be pasted into mobile web browsers. These deeplinks must either be handled by an app or clicked on by an end user.
+{% endhint %}
+
 ### URL Structure
 
 ```

@@ -11,7 +11,7 @@ Phantom is currently available as:
 
 * A [browser extension](https://phantom.app/download)
 * An [iOS app](https://apps.apple.com/us/app/phantom-solana-wallet/id1598432977)
-* An [Android app](https://play.google.com/store/apps/details?id=app.phantom) (in beta!)
+* An [Android app](https://play.google.com/store/apps/details?id=app.phantom)
 
 At its core, Phantom works by creating and managing private keys on behalf of its users. These keys can then be used within Phantom to store funds and sign transactions.&#x20;
 
