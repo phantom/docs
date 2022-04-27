@@ -2,7 +2,7 @@
 
 In order to start interacting with Phantom, an app must first establish a connection. This connection request will prompt the user for permission to share their public key, indicating that they are willing to interact further. Once permission is established for the first time, the web application's domain will be whitelisted for future connection requests.&#x20;
 
-Similarly, it is possible to terminate the connection both on the application and the user side.
+After a connection is established, it is possible to terminate the connection from both the application and the user side.
 
 ## Connecting
 
@@ -89,6 +89,8 @@ useEffect(() => {
         })
 }, []);
 ```
+
+If a wallet disconnects from a trusted app and then attempts to reconnect at a later time, Phantom will still eagerly connect. Once an app is trusted, Phantom will only require the user to approve a connection request if the user revokes the app from within their Trusted Apps settings.
 
 ## Disconnecting
 
