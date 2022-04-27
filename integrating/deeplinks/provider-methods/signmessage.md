@@ -64,3 +64,7 @@ An `errorCode` and `errorMessage` as query parameters. Please refer to [Errors](
   "errorMessage": "..."
 }
 ```
+
+### Example
+
+Please refer to the [`signMessage` method implemented in our React Native demo application](https://github.com/phantom-labs/deep-link-demo-app/blob/20f19f2154e98699f0d5a6b28bc4bb3d5acbcefd/App.tsx#L290).
