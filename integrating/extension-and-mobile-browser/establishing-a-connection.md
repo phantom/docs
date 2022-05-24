@@ -2,7 +2,7 @@
 
 In order to start interacting with Phantom, an app must first establish a connection. This connection request will prompt the user for permission to share their public key, indicating that they are willing to interact further. Once permission is established for the first time, the web application's domain will be whitelisted for future connection requests.&#x20;
 
-Similarly, it is possible to terminate the connection both on the application and the user side.
+After a connection is established, it is possible to terminate the connection from both the application and the user side.
 
 ## Connecting
 
@@ -53,9 +53,9 @@ window.solana.isConnected
 
 ## Eagerly Connecting
 
-After a web application connects to Phantom for the first time, it becomes trusted. Once trusted, it's possible for the application to automatically connect to Phantom on subsequent visits or page refreshes. This is often referred to as "eagerly connecting".
+After a web application connects to Phantom for the first time, it becomes trusted. Once trusted, it's possible for the application to automatically connect to Phantom on subsequent visits or page refreshes, without prompting the user for permission. This is referred to as "eagerly connecting".
 
-To implement this, Phantom allows an `onlyIfTrusted` option to be passed into the `connect()` call.
+To implement this, applications should pass an `onlyIfTrusted` option into the `connect()` call.
 
 {% tabs %}
 {% tab title="connect()" %}
@@ -71,7 +71,7 @@ window.solana.request({ method: "connect", params: { onlyIfTrusted: true }});
 {% endtab %}
 {% endtabs %}
 
-When using this flag, Phantom will only connect and emit a `connect` event if the application is trusted. Therefore, this can be safely called on page load for new users, as they won't be bothered by a pop-up window even if they have never connected to Phantom before.
+If this flag is present, Phantom will only eagerly connect and emit a `connect` event if the application is trusted. If the application is not trusted, Phantom will throw a [`4001` error](../errors.md) and remain disconnected until the user is prompted to connect without an `onlyIfTrusted` flag. In either case, Phantom will not open a pop-up window, making this convenient to use on all page loads.
 
 The following is an example of how a React application can eagerly connect to Phantom.
 
@@ -90,9 +90,11 @@ useEffect(() => {
 }, []);
 ```
 
+If a wallet disconnects from a trusted app and then attempts to reconnect at a later time, Phantom will still eagerly connect. Once an app is trusted, Phantom will only require the user to approve a connection request if the user revokes the app from within their Trusted Apps settings.
+
 ## Disconnecting
 
-Disconnecting mirrors the same process as connecting. However, it is also possible for the wallet to initiate the disconnection, rather than the application itself. For this reason, it's important for applications to gracefully handle a `disconnect` event.
+Disconnecting mirrors the same process as connecting. However, it is also possible for the wallet to initiate the disconnection, rather than the application itself.
 
 {% tabs %}
 {% tab title="disconnect()" %}
@@ -108,6 +110,22 @@ window.solana.request({ method: "disconnect" });
 {% endtab %}
 {% endtabs %}
 
+The following is an example of how a React application can [gracefully handle](https://github.com/phantom-labs/sandbox/blob/5686f2792066a9256e598bfcfba5e38c4a5bbca7/src/App.tsx#L73) a `disconnect` event.
+
 ```javascript
-window.solana.on('disconnect', () => console.log("disconnected!"))
+import { useState, useEffect } from "react";
+
+const [pubKey, setPubKey] = useState(null);
+
+useEffect(() => {
+  // Store user's public key once they connect
+  provider.on("connect", (publicKey) => {
+    setPubKey(publicKey);
+  });
+
+  // Forget user's public key once they disconnect
+  provider.on("disconnect", () => {
+    setPubKey(null);
+  });
+}, [provider]);
 ```

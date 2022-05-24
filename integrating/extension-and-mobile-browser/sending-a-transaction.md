@@ -47,11 +47,11 @@ await connection.confirmTransaction(signature);
 
 You can also specify a `SendOptions` [object](https://solana-labs.github.io/solana-web3.js/modules.html#SendOptions) as a second argument into `signAndSendTransaction` or as an `options` parameter when using `request`.
 
-## Deprecated Methods
+## Other Signing Methods
 
-The following methods are still supported, but are no longer recommended and may be removed in a future version of Phantom. It is safer for users, and a simpler API for developers, for Phantom to submit the transaction immediately after signing it instead of relying on the application to do so. For now, if you use the methods below, Phantom will display a warning message to users.
+The following methods are also supported, but are not recommended over `signAndSendTransaction`. It is safer for users, and a simpler API for developers, for Phantom to submit the transaction immediately after signing it instead of relying on the application to do so. If you use the methods below, Phantom will display a warning message to users.
 
-### Signing a Transaction
+### Signing a Transaction (Without Sending)
 
 Once a transaction is created, a web application may ask the user's Phantom wallet to sign the transaction _without_ also submitting it to the network. The easiest and most recommended way of doing this is via the `signTransaction` method on the provider, but it is also possible to do via `request`. In both cases, the call will return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise) for the signed transaction. After the transaction has been signed, an application may submit the transaction itself via [web3js's `sendRawTransaction`](https://solana-labs.github.io/solana-web3.js/classes/Connection.html#sendRawTransaction).
 

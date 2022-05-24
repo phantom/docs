@@ -5,7 +5,7 @@ coverY: -50.54759898904802
 
 # Introduction
 
-**Phantom** is a crypto wallet that can be used to manage digital assets and access decentralized applications on the [Solana](https://solana.com) blockchain.&#x20;
+**Phantom** is a crypto wallet that can be used to manage digital assets and access decentralized applications on the [Solana](https://solana.com/) blockchain.&#x20;
 
 Phantom is currently available as:
 
@@ -19,5 +19,5 @@ To interact with web applications, the Phantom [extension and mobile in-app brow
 
 It's also possible to interact with the Phantom mobile app through [universal links and deeplinks](integrating/deeplinks/). With deeplinks, mobile apps can prompt their users to connect, sign, and send with Phantom directly. Once complete, Phantom will redirect users back to their referring applications.
 
-This documentation is intended for developers who are building applications with Phantom. To get help with using Phantom, please visit our [Help Center](https://help.phantom.app).
+This documentation is intended for developers who are building applications with Phantom. If you are a developer looking for help with an integration, please check out our [developer discord.](https://discord.gg/j5Dp7ztzvW) To get help with using Phantom, please visit our [Help Center](https://help.phantom.app/).
 
