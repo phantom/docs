@@ -2,7 +2,7 @@
 
 ## Are hardware wallets supported?
 
-Yes, Phantom currently supports [Ledger](https://www.ledger.com) and requires no special treatment on the application side.
+Yes, Phantom currently supports [Ledger](https://www.ledger.com/) and requires no special treatment on the application side.
 
 ## Why isn't my token displaying properly?
 

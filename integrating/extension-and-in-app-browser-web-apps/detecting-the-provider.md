@@ -8,7 +8,7 @@ To make it easy to detect Phantom specifically, Phantom also adds an additional 
 const isPhantomInstalled = window.solana && window.solana.isPhantom
 ```
 
-If Phantom is not installed, we recommend you redirect your users to [our website](https://phantom.app). Altogether, this may look like the following.
+If Phantom is not installed, we recommend you redirect your users to [our website](https://phantom.app/). Altogether, this may look like the following.
 
 ```javascript
 const getProvider = () => {

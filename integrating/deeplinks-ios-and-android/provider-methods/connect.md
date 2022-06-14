@@ -12,9 +12,9 @@ https://phantom.app/ul/v1/connect
 
 ### Query String Parameters
 
-* `app_url` **(required)**: A url used to fetch app metadata (i.e. title, icon) using the same properties found in [Displaying Your App](../../../best-practices/displaying-your-app.md).
+* `app_url` **(required)**: A url used to fetch app metadata (i.e. title, icon) using the same properties found in [Displaying Your App](../../../best-practices/displaying-your-app.md). URL-encoded.
 * `dapp_encryption_public_key` **(required)**: A public key used for end-to-end encryption. This will be used to generate a shared secret. For more information on how Phantom handles shared secrets, please review [Encryption](../encryption.md).&#x20;
-* `redirect_link` **(required)**: The URI where Phantom should redirect the user upon connection. Please review [Specifying Redirects](../specifying-redirects.md) for more details.
+* `redirect_link` **(required)**: The URI where Phantom should redirect the user upon connection. Please review [Specifying Redirects](../specifying-redirects.md) for more details. URL-encoded.
 * `cluster` (optional): The network that should be used for subsequent interactions. Can be either: `mainnet-beta`, `testnet`, or `devnet`. Defaults to `mainnet-beta`.
 
 ### Returns

@@ -80,17 +80,20 @@ Phantom supports a range of NFT media types including images, audio files, video
 * `.gltf`
 * `.gltf-binary`
 
-### Grouping Non-Fungible Tokens
+### Grouping Collectibles
 
-Phantom groups NFTs by the first verified creator's address in the `creators` array found on the on-chain metadata. If two items share the same creator address at the 0 index of their `creators` array, they will be grouped into the same collection.
+Phantom groups collectibles by the [on-chain collection](http://docs.metaplex.com/token-metadata/specification#collections) field introduced in [v1.1.0 of the Token Metadata Standard](http://docs.metaplex.com/token-metadata/Versions/v1.1.0/overview). In order to be grouped together, individual NFTs should all reference the same verified collection mint address. This mint address is itself home to an NFT with metadata that describes the collection ([Example](https://solscan.io/token/SMBH3wF6baUj6JWtzYvqcKuj2XCKWDqQxzspY12xPND#metadata)). Creators must ensure that this collection is [verified on-chain](http://docs.metaplex.com/token-metadata/specification#verifying-a-collection) (i.e. that verified is set to true).
+
+If no verified collection is found, Phantom will fallback to grouping NFTs by the first verified creator's address in the on-chain `creators` field. If two items share the same creator address at the 0 index of their `creators` array, they will be grouped into the same collection.
+
+### Naming Grouped Collectibles
 
 When a group is created, a best-effort process is used to determine that group’s name. That is because not every collection includes all the uri schema JSON key / value pairs. The following data is therefore used in descending order of preference:
 
-1. `collection.name`
-2. `collection.family`
-3. `external_url` (parsed to remove url parts)
-4. `name` (of a single collectible)
-5. `symbol`
-6. address of the first verified creator in the `creators` array (also used to group the collection)
-
-Please add the above mentioned data if you are a creator and want your collection to be displayed properly in Phantom.&#x20;
+1. `name` of the verified on-chain collection NFT
+2. `collection.name`
+3. `collection.family`
+4. `external_url` (parsed to remove url parts)
+5. `name` (of a single collectible)
+6. `symbol`
+7. address of the first verified creator in the `creators` array (also used to group the collection)

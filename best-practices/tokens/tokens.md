@@ -2,7 +2,7 @@
 
 Fungible tokens are simple SPL tokens with limited metadata. These tokens are often highly divisible and will be displayed by Phantom on the home tab. Examples of these include USDC, USDT, and SRM.&#x20;
 
-When displaying fungible tokens, Phantom will supersede any [On-Chain Metadata](on-chain-metadata.md) with information found on the [Solana Token List](https://github.com/solana-labs/token-list). This list is open to community contributions and adheres to the [Token Lists Standard](https://tokenlists.org).
+When displaying fungible tokens, Phantom will supersede any [On-Chain Metadata](on-chain-metadata.md) with information found on the [Solana Token List](https://github.com/solana-labs/token-list). This list is open to community contributions and adheres to the [Token Lists Standard](https://tokenlists.org/).
 
 When referencing the Token List, Phantom will display the following fields:
 

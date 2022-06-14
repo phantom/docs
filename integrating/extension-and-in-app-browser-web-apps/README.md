@@ -1,6 +1,6 @@
-# Extension & Mobile Browser
+# Extension & In-app Browser (Web Apps)
 
-The Phantom browser extension and mobile in-app browser are both designed to interact with web applications. For mobile apps, we recommend integrating via [universal links or deeplinks](../deeplinks/).
+The Phantom browser extension and mobile in-app browser are both designed to interact with web applications. For mobile apps, we recommend integrating via [universal links or deeplinks](../deeplinks-ios-and-android/).
 
 There are two main ways to integrate Phantom into your web application:
 

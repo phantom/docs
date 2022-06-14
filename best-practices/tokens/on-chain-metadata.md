@@ -1,6 +1,6 @@
 # On-Chain Metadata
 
-For both fungible and non-fungible tokens, Phantom supports the [Token Metadata Program](https://github.com/metaplex-foundation/metaplex-program-library/tree/master/token-metadata/program) established by [Metaplex](https://www.metaplex.com). This program allows you to map a mint address to an on-chain account with its relevant data.
+For both fungible and non-fungible tokens, Phantom supports the [Token Metadata Program](https://github.com/metaplex-foundation/metaplex-program-library/tree/master/token-metadata/program) established by [Metaplex](https://www.metaplex.com/). This program allows you to map a mint address to an on-chain account with its relevant data.
 
 The address of the program is: `metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s`.
 

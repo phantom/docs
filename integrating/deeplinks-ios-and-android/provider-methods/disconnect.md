@@ -12,7 +12,7 @@ https://phantom.app/ul/v1/disconnect
 
 * `dapp_encryption_public_key` **(required)**: The original encryption public key used from the app side for an existing [Connect](connect.md) session.
 * `nonce` **(required)**: A nonce used for encrypting the request, encoded in base58.
-* `redirect_link` **(required)**: The URI where Phantom should redirect the user upon completion. Please review [Specifying Redirects](../specifying-redirects.md) for more details.
+* `redirect_link` **(required)**: The URI where Phantom should redirect the user upon completion. Please review [Specifying Redirects](../specifying-redirects.md) for more details. URL-encoded.
 *   `payload` **(required)**: An encrypted JSON string with the following fields:
 
     ```json
