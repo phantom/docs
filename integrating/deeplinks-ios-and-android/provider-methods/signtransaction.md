@@ -19,7 +19,7 @@ https://phantom.app/ul/v1/signTransaction
 
     ```json
     {
-      "transactions": "...", // serialized transaction, base58 encoded
+      "transaction": "...", // serialized transaction, base58 encoded
       "session": "...", // token received from connect-method
     }
     ```
