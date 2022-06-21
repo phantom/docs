@@ -29,9 +29,9 @@
 
 * [Displaying Your App](best-practices/displaying-your-app.md)
 * [Displaying Tokens](best-practices/tokens/README.md)
-  * [On-Chain Metadata](best-practices/tokens/on-chain-metadata.md)
-  * [Fungible Tokens](best-practices/tokens/tokens.md)
-  * [Non-Fungible Tokens (NFTs)](best-practices/tokens/non-fungible-tokens.md)
+  * [Home Tab (Fungibles)](best-practices/tokens/home-tab-fungibles.md)
+  * [Collectibles (NFTs & Semi-Fungibles)](best-practices/tokens/collectibles-nfts-and-semi-fungibles.md)
+  * [Supported Media Types](best-practices/tokens/supported-media-types.md)
 
 ## 📚 Resources
 

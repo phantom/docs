@@ -1,16 +1,28 @@
 # FAQ
 
-## Are hardware wallets supported?
+## Why can't I access Phantom on my website?
 
-Yes, Phantom currently supports [Ledger](https://www.ledger.com/) and requires no special treatment on the application side.
+Phantom will only [inject its provider](../integrating/extension-and-in-app-browser-web-apps/detecting-the-provider.md) into websites that begin with `https://`, or if the host is `localhost` or `127.0.0.1`. If your website only uses `http://`, Phantom will not inject its provider and you will not be able to access the methods found at `window.solana`. Encrypting your web traffic and upgrading to `https://` will restore functionality.
 
 ## Why isn't my token displaying properly?
 
-If an SPL token's [On-Chain Metadata Structure](../best-practices/tokens/on-chain-metadata.md#metadata-structure) contains a `uri` field, Phantom will consider it to be non-fungible. Otherwise, Phantom will consider the token to be fungible. Creators of [Non-Fungible tokens (NFTs)](../best-practices/tokens/non-fungible-tokens.md) should ensure that their [URI JSON Schema](../best-practices/tokens/non-fungible-tokens.md#uri-json-schema) properly specifies the item's file extension with the `?ext=` query parameter. Creators of [Fungible Tokens](../best-practices/tokens/tokens.md) should ensure that their token's metadata is merged into the [Solana Token List](https://github.com/solana-labs/token-list).
+Phantom supports the [Token Metadata Standard](https://docs.metaplex.com/programs/token-metadata/overview) established by [Metaplex](https://www.metaplex.com/). When displaying tokens, Phantom will first [categorize](../best-practices/tokens/#categorizing-tokens) them according to their [TokenStandard](https://docs.metaplex.com/programs/token-metadata/token-standard). If a token is considered `Fungible`, Phantom will display it on the [Home tab](../best-practices/tokens/home-tab-fungibles.md). Otherwise, Phantom will display it as a [Collectible](../best-practices/tokens/collectibles-nfts-and-semi-fungibles.md). For more information, please review:
+
+{% content-ref url="../best-practices/tokens/" %}
+[tokens](../best-practices/tokens/)
+{% endcontent-ref %}
 
 ## What types of NFTs are supported?
 
-Phantom supports a range of NFT media types including images, audio files, video files, and 3d models. At this time, Phantom does not support HTML files. For a full list of the types of NFTs that Phantom will display, please reference [Supported Media Types](../best-practices/tokens/non-fungible-tokens.md#supported-media-types).
+Phantom supports a range of NFT media types including images, audio files, video files, and 3D models. At this time, Phantom does not support HTML files. For a full list of the types of NFTs that Phantom will display, please reference:
+
+{% content-ref url="../best-practices/tokens/supported-media-types.md" %}
+[supported-media-types.md](../best-practices/tokens/supported-media-types.md)
+{% endcontent-ref %}
+
+## Are hardware wallets supported?
+
+Yes, Phantom currently supports [Ledger](https://www.ledger.com/) and requires no special treatment on the application side.
 
 ## How does Phantom import wallet addresses?
 
