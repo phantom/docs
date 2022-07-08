@@ -1,19 +1,20 @@
 # Establishing a Connection
 
-In order to start interacting with Phantom, an app must first establish a connection. This connection request will prompt the user for permission to share their public key, indicating that they are willing to interact further. Once permission is established for the first time, the web application's domain will be whitelisted for future connection requests.&#x20;
+Once an application has [detected the provider](detecting-the-provider.md), it can then request to connect to Phantom. This connection request will prompt the user for permission to share their public key, indicating that they are willing to interact further. Users must approve a connection request before the app can make additional requests such as [signing a message](signing-a-message.md) or [sending a transaction](sending-a-transaction.md).
 
-After a connection is established, it is possible to terminate the connection from both the application and the user side.
+Once permission is established for the first time, the web application's domain will be whitelisted for future connection requests. After a connection is established, it is possible to terminate the connection from both the application and the user side.
 
 ## Connecting
 
-The **recommended** and **easiest** way to connect to Phantom is by calling `window.solana.connect()`. However, the provider also exposes a `request` JSON RPC interface.
+The **recommended** and **easiest** way to connect to Phantom is by calling `window.phantom.solana.connect()`. However, the provider also exposes a `request` JSON RPC interface.
 
 {% tabs %}
 {% tab title="connect()" %}
 ```javascript
+const provider = getProvider();
 try {
-    const resp = await window.solana.connect();
-    resp.publicKey.toString()
+    const resp = await provider.connect();
+    console.log(resp.publicKey.toString());
     // 26qv4GCcx98RihuK3c4T6ozB3J7L6VwCuFVc7Ta2A3Uo 
 } catch (err) {
     // { code: 4001, message: 'User rejected the request.' }
@@ -23,9 +24,10 @@ try {
 
 {% tab title="request()" %}
 ```javascript
+const provider = getProvider();
 try {
-    const resp = await window.solana.request({ method: "connect" });
-    resp.publicKey.toString()
+    const resp = await provider.request({ method: "connect" });
+    console.log(resp.publicKey.toString());
     // 26qv4GCcx98RihuK3c4T6ozB3J7L6VwCuFVc7Ta2A3Uo 
 } catch (err) {
     // { code: 4001, message: 'User rejected the request.' }
@@ -39,15 +41,15 @@ The `connect()` call will return a [Promise](https://developer.mozilla.org/en-US
 When the user accepts the request to connect, the provider will also emit a `connect` event.
 
 ```javascript
-window.solana.on("connect", () => console.log("connected!"))
+provider.on("connect", () => console.log("connected!"));
 ```
 
 Once the web application is connected to Phantom, it will be able to read the connected account's public key and prompt the user for additional transactions. It also exposes a convenience `isConnected` boolean.
 
 ```javascript
-window.solana.publicKey.toString()
+console.log(provider.publicKey.toString());
 // 26qv4GCcx98RihuK3c4T6ozB3J7L6VwCuFVc7Ta2A3Uo 
-window.solana.isConnected
+console.log(provider.isConnected);
 // true
 ```
 
@@ -60,7 +62,7 @@ To implement this, applications should pass an `onlyIfTrusted` option into the `
 {% tabs %}
 {% tab title="connect()" %}
 ```javascript
-window.solana.connect({ onlyIfTrusted: true });
+provider.connect({ onlyIfTrusted: true });
 ```
 {% endtab %}
 
@@ -80,7 +82,7 @@ import { useEffect } from "react";
 
 useEffect(() => {
     // Will either automatically connect to Phantom, or do nothing.
-    window.solana.connect({ onlyIfTrusted: true })
+    provider.connect({ onlyIfTrusted: true })
         .then(({ publicKey }) => {
             // Handle successful eager connection
         });
@@ -89,6 +91,8 @@ useEffect(() => {
         })
 }, []);
 ```
+
+For a live demo, please refer to the [`handleConnect` portion of our sandbox](https://github.com/phantom-labs/sandbox/blob/b57fdd0e65ce4f01290141a01e33d17fd2f539b9/src/App.tsx#L263).
 
 If a wallet disconnects from a trusted app and then attempts to reconnect at a later time, Phantom will still eagerly connect. Once an app is trusted, Phantom will only require the user to approve a connection request if the user revokes the app from within their Trusted Apps settings.
 
@@ -99,18 +103,18 @@ Disconnecting mirrors the same process as connecting. However, it is also possib
 {% tabs %}
 {% tab title="disconnect()" %}
 ```javascript
-window.solana.disconnect();
+provider.disconnect();
 ```
 {% endtab %}
 
 {% tab title="request()" %}
 ```javascript
-window.solana.request({ method: "disconnect" });
+provider.request({ method: "disconnect" });
 ```
 {% endtab %}
 {% endtabs %}
 
-The following is an example of how a React application can [gracefully handle](https://github.com/phantom-labs/sandbox/blob/5686f2792066a9256e598bfcfba5e38c4a5bbca7/src/App.tsx#L73) a `disconnect` event.
+The following is an example of how a React application can [gracefully handle](https://github.com/phantom-labs/sandbox/blob/b57fdd0e65ce4f01290141a01e33d17fd2f539b9/src/App.tsx#L107) a `disconnect` event.
 
 ```javascript
 import { useState, useEffect } from "react";

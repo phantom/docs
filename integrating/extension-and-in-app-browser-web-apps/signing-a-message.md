@@ -7,7 +7,7 @@ In order to send a message for the user to sign, a web application must:&#x20;
 1. Provide a **hex** or **UTF-8** encoded string as a Uint8Array.
 2. Request that the encoded message is signed via the user's Phantom wallet.
 
-The [developer sandbox](../../resources/sandbox.md#sandbox) provides an example of signing a message.
+The [`handleSignMessage` section of our developer sandbox](https://github.com/phantom-labs/sandbox/blob/b57fdd0e65ce4f01290141a01e33d17fd2f539b9/src/App.tsx#L242) provides an example of signing a message.
 
 {% hint style="info" %}
 For more information on how to verify the signature of a message, please refer to [tweetnacl-js](https://github.com/dchest/tweetnacl-js/blob/master/README.md#naclsigndetachedverifymessage-signature-publickey).
@@ -16,19 +16,19 @@ For more information on how to verify the signature of a message, please refer t
 {% tabs %}
 {% tab title="signMessage()" %}
 ```javascript
-const message = `To avoid digital dognappers,
-    sign below to authenticate with CryptoCorgis`;
+const provider = getProvider();
+const message = `To avoid digital dognappers, sign below to authenticate with CryptoCorgis`;
 const encodedMessage = new TextEncoder().encode(message);
-const signedMessage = await window.solana.signMessage(encodedMessage, "utf8");
+const signedMessage = await provider.signMessage(encodedMessage, "utf8");
 ```
 {% endtab %}
 
 {% tab title="request()" %}
 ```javascript
-const message = `To avoid digital dognappers,
-    sign below to authenticate with CryptoCorgis`;
+const provider = getProvider();
+const message = `To avoid digital dognappers, sign below to authenticate with CryptoCorgis`;
 const encodedMessage = new TextEncoder().encode(message);
-const signedMessage = await window.solana.request({
+const signedMessage = await provider.request({
     method: "signMessage",
     params: {
          message: encodedMessage,

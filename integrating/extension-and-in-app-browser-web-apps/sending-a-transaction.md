@@ -12,7 +12,7 @@ In order to send a transaction, a web application must:
 For more information about the nature of Solana transactions, please review the [`solana-web3.js` docs](https://solana-labs.github.io/solana-web3.js/) as well as the [Solana Cookbook](https://solanacookbook.com/core-concepts/transactions.html#transactions).
 {% endhint %}
 
-For a sample Phantom transaction, check out our [developer sandbox](../../resources/sandbox.md#sandbox).
+For a sample Phantom transaction, check out our [developer sandbox](https://github.com/phantom-labs/sandbox/blob/b57fdd0e65ce4f01290141a01e33d17fd2f539b9/src/App.tsx#L160).
 
 ## Signing and Sending a Transaction
 
@@ -21,31 +21,35 @@ Once a transaction is created, the web application may ask the user's Phantom wa
 {% tabs %}
 {% tab title="signAndSendTransaction()" %}
 ```javascript
+const provider = getProvider();
 const network = "<NETWORK_URL>";
 const connection = new Connection(network);
 const transaction = new Transaction();
-const { signature } = await window.solana.signAndSendTransaction(transaction);
-await connection.confirmTransaction(signature);
+const { signature } = await provider.signAndSendTransaction(transaction);
+await connection.getSignatureStatus(signature);
 ```
 {% endtab %}
 
 {% tab title="request()" %}
 ```javascript
+const provider = getProvider();
 const network = "<NETWORK_URL>";
 const connection = new Connection(network);
 const transaction = new Transaction();
-const { signature } = await window.solana.request({
+const { signature } = await provider.request({
     method: "signAndSendTransaction",
     params: {
          message: bs58.encode(transaction.serializeMessage()),
     },
 });
-await connection.confirmTransaction(signature);
+await connection.getSignatureStatus(signature);
 ```
 {% endtab %}
 {% endtabs %}
 
 You can also specify a `SendOptions` [object](https://solana-labs.github.io/solana-web3.js/modules.html#SendOptions) as a second argument into `signAndSendTransaction` or as an `options` parameter when using `request`.
+
+For a live demo of `signAndSendTransaction`, please refer to the [`handleSignAndSendTransaction` section of our developer sandbox](https://github.com/phantom-labs/sandbox/blob/b57fdd0e65ce4f01290141a01e33d17fd2f539b9/src/App.tsx#L160).
 
 ## Other Signing Methods
 
@@ -58,20 +62,22 @@ Once a transaction is created, a web application may ask the user's Phantom wall
 {% tabs %}
 {% tab title="signTransaction()" %}
 ```javascript
+const provider = getProvider();
 const network = "<NETWORK_URL>";
 const connection = new Connection(network);
 const transaction = new Transaction();
-const signedTransaction = await window.solana.signTransaction(transaction);
+const signedTransaction = await provider.signTransaction(transaction);
 const signature = await connection.sendRawTransaction(signedTransaction.serialize());
 ```
 {% endtab %}
 
 {% tab title="request()" %}
 ```javascript
+const provider = getProvider();
 const network = "<NETWORK_URL>";
 const connection = new Connection(network);
 const transaction = new Transaction();
-const signedTransaction = await window.solana.request({
+const signedTransaction = await provider.request({
     method: "signTransaction",
     params: {
          message: bs58.encode(transaction.serializeMessage()),
@@ -82,6 +88,8 @@ const signature = await connection.sendRawTransaction(signedTransaction.serializ
 {% endtab %}
 {% endtabs %}
 
+Please refer to the [`handleSignTransaction` section of our developer sandbox](https://github.com/phantom-labs/sandbox/blob/b57fdd0e65ce4f01290141a01e33d17fd2f539b9/src/App.tsx#L187) for an example of `signTransaction`.
+
 ### Signing Multiple Transactions
 
 It is also possible to sign and send multiple transactions at once. This is exposed through the `signAllTransactions` method on the provider.
@@ -89,7 +97,7 @@ It is also possible to sign and send multiple transactions at once. This is expo
 {% tabs %}
 {% tab title="signAllTransactions()" %}
 ```javascript
-const signedTransactions = await window.solana.signAllTransactions(transactions);
+const signedTransactions = await provider.signAllTransactions(transactions);
 ```
 {% endtab %}
 
@@ -98,7 +106,7 @@ const signedTransactions = await window.solana.signAllTransactions(transactions)
 const message = transactions.map(transaction => {
     return bs58.encode(transaction.serializeMessage());
 });
-const signedTransactions = await window.solana.request({
+const signedTransactions = await provider.request({
     method: "signAllTransactions",
     params: { message },
 });
@@ -106,4 +114,4 @@ const signedTransactions = await window.solana.request({
 {% endtab %}
 {% endtabs %}
 
-&#x20;
+For an example of `signAllTransactions`, please refer to the [`handleSignAllTransactions` section of our developer sandbox](https://github.com/phantom-labs/sandbox/blob/b57fdd0e65ce4f01290141a01e33d17fd2f539b9/src/App.tsx#L213).

@@ -2,9 +2,9 @@
 
 ### Sandbox
 
-For a live example of a simple integration with the Phantom [browser extension](../integrating/extension-and-in-app-browser-web-apps/), check out our developer sandbox on [CodeSandbox](https://codesandbox.io/s/github/phantom-labs/sandbox?file=/src/App.tsx) and [GitHub](https://github.com/phantom-labs/sandbox).
+For a live example of a simple integration with the Phantom [browser extension](../integrating/extension-and-in-app-browser-web-apps/), check out our developer sandbox on [CodeSandbox](https://codesandbox.io/s/github/phantom-labs/sandbox?file=/src/App.tsx) and [GitHub](https://github.com/phantom-labs/sandbox). The sandbox itself can be interacting with at: [https://r3byv.csb.app/](https://r3byv.csb.app/).
 
-![The Phantom Sandbox](../.gitbook/assets/sandbox.png)
+![The Phantom Sandbox](<../.gitbook/assets/Screen Shot 2022-07-07 at 5.13.23 PM.png>)
 
 ### Deeplinking Demo App
 

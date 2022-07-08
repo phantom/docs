@@ -6,7 +6,7 @@ There are two main ways to integrate Phantom into your web application:
 
 ### Direct Integration
 
-The most direct way to interact with Phantom is via the provider that Phantom injects into your web application. This provider is globally available at `window.solana` and its methods will always include Phantom's most up-to-date functionality. This documentation is dedicated to covering all aspects of the provider.
+The most direct way to interact with Phantom is via the provider that Phantom injects into your web application. This provider is globally available at `window.phantom` and its methods will always include Phantom's most up-to-date functionality. This documentation is dedicated to covering all aspects of the provider.
 
 ### Solana Wallet Adapter
 

@@ -4,6 +4,8 @@
 
 Phantom will only [inject its provider](../integrating/extension-and-in-app-browser-web-apps/detecting-the-provider.md) into websites that begin with `https://`, or if the host is `localhost` or `127.0.0.1`. If your website only uses `http://`, Phantom will not inject its provider and you will not be able to access the methods found at `window.solana`. Encrypting your web traffic and upgrading to `https://` will restore functionality.
 
+Phantom will also not inject it's provider into any [iframe](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe).
+
 ## Why isn't my token displaying properly?
 
 Phantom supports the [Token Metadata Standard](https://docs.metaplex.com/programs/token-metadata/overview) established by [Metaplex](https://www.metaplex.com/). When displaying tokens, Phantom will first [categorize](../best-practices/tokens/#categorizing-tokens) them according to their [TokenStandard](https://docs.metaplex.com/programs/token-metadata/token-standard). If a token is considered `Fungible`, Phantom will display it on the [Home tab](../best-practices/tokens/home-tab-fungibles.md). Otherwise, Phantom will display it as a [Collectible](../best-practices/tokens/collectibles-nfts-and-semi-fungibles.md). For more information, please review:

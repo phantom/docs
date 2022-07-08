@@ -17,7 +17,7 @@ At its core, Phantom works by creating and managing private keys on behalf of it
 
 Developers can interact with Phantom via both **web** applications as well as **iOS and Android** applications.
 
-To interact with web applications, the Phantom [extension and mobile in-app browser](integrating/extension-and-in-app-browser-web-apps/) inject a `solana` object into the javascript context of every site the user visits (provided that site is using `https://`). A given web app may then interact with Phantom, and ask for the user's permission to perform transactions, through this injected object.
+To interact with web applications, the Phantom [extension and mobile in-app browser](integrating/extension-and-in-app-browser-web-apps/) inject a `phantom` object into the javascript context of every site the user visits. A given web app may then interact with Phantom, and ask for the user's permission to perform transactions, through this injected provider.
 
 It's also possible to interact with the Phantom mobile app through [universal links and deeplinks](integrating/deeplinks-ios-and-android/). With deeplinks, mobile apps can prompt their users to connect, sign, and send with Phantom directly. Once complete, Phantom will redirect users back to their referring applications.
 
