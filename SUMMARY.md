@@ -37,6 +37,7 @@
 
 * [FAQ](resources/faq.md)
 * [Demo Applications](resources/sandbox.md)
+* [Community Guides & SDKs](resources/community-guides-and-sdks.md)
 * [Blocklist](resources/blocklist.md)
 * [Live Integrations](resources/live-integrations.md)
 * [Logos & Assets](resources/assets.md)
