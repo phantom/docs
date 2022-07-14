@@ -16,7 +16,7 @@ For more information on how to verify the signature of a message, please refer t
 {% tabs %}
 {% tab title="signMessage()" %}
 ```javascript
-const provider = getProvider();
+const provider = getProvider(); // see "Detecting the Provider"
 const message = `To avoid digital dognappers, sign below to authenticate with CryptoCorgis`;
 const encodedMessage = new TextEncoder().encode(message);
 const signedMessage = await provider.signMessage(encodedMessage, "utf8");
@@ -25,7 +25,7 @@ const signedMessage = await provider.signMessage(encodedMessage, "utf8");
 
 {% tab title="request()" %}
 ```javascript
-const provider = getProvider();
+const provider = getProvider(); // see "Detecting the Provider"
 const message = `To avoid digital dognappers, sign below to authenticate with CryptoCorgis`;
 const encodedMessage = new TextEncoder().encode(message);
 const signedMessage = await provider.request({

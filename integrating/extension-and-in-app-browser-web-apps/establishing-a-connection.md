@@ -11,7 +11,7 @@ The **recommended** and **easiest** way to connect to Phantom is by calling `win
 {% tabs %}
 {% tab title="connect()" %}
 ```javascript
-const provider = getProvider();
+const provider = getProvider(); // see "Detecting the Provider"
 try {
     const resp = await provider.connect();
     console.log(resp.publicKey.toString());
@@ -24,7 +24,7 @@ try {
 
 {% tab title="request()" %}
 ```javascript
-const provider = getProvider();
+const provider = getProvider(); // see "Detecting the Provider"
 try {
     const resp = await provider.request({ method: "connect" });
     console.log(resp.publicKey.toString());
@@ -53,7 +53,7 @@ console.log(provider.isConnected);
 // true
 ```
 
-## Eagerly Connecting
+### Eagerly Connecting
 
 After a web application connects to Phantom for the first time, it becomes trusted. Once trusted, it's possible for the application to automatically connect to Phantom on subsequent visits or page refreshes, without prompting the user for permission. This is referred to as "eagerly connecting".
 
@@ -133,3 +133,38 @@ useEffect(() => {
   });
 }, [provider]);
 ```
+
+## Changing Accounts
+
+Phantom allows users to seamlessly manage multiple accounts (i.e. [Keypairs](https://solana-labs.github.io/solana-web3.js/classes/Keypair.html)) from within a single extension or mobile app. Whenever a user switches accounts, Phantom will emit an `accountChanged` event.
+
+If a user changes accounts while already connected to an application, and the new account had already whitelisted that application, then the user will stay connected and Phantom will pass the [PublicKey](https://solana-labs.github.io/solana-web3.js/classes/PublicKey.html) of the new account:
+
+```javascript
+provider.on('accountChanged', (publicKey) => {
+    if (publicKey) {
+        // Set new public key and continue as usual
+        console.log(`Switched to account ${publicKey.toBase58()}`,
+    } 
+});
+```
+
+If Phantom does not pass the public key of the new account, an application can either do nothing or attempt to reconnect:
+
+```javascript
+provider.on('accountChanged', (publicKey) => {
+    if (publicKey) {
+      // Set new public key and continue as usual
+      console.log(`Switched to account ${publicKey.toBase58()}`,
+    } else {
+      // Attempt to reconnect to Phantom
+      provider.connect().catch((error) => {
+        // Handle connection failure
+      });
+    }
+});
+```
+
+
+
+&#x20;

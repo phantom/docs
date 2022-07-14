@@ -21,7 +21,7 @@ Once a transaction is created, the web application may ask the user's Phantom wa
 {% tabs %}
 {% tab title="signAndSendTransaction()" %}
 ```javascript
-const provider = getProvider();
+const provider = getProvider(); // see "Detecting the Provider"
 const network = "<NETWORK_URL>";
 const connection = new Connection(network);
 const transaction = new Transaction();
@@ -32,7 +32,7 @@ await connection.getSignatureStatus(signature);
 
 {% tab title="request()" %}
 ```javascript
-const provider = getProvider();
+const provider = getProvider(); // see "Detecting the Provider"
 const network = "<NETWORK_URL>";
 const connection = new Connection(network);
 const transaction = new Transaction();
