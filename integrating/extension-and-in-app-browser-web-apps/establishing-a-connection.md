@@ -144,7 +144,7 @@ If a user changes accounts while already connected to an application, and the ne
 provider.on('accountChanged', (publicKey) => {
     if (publicKey) {
         // Set new public key and continue as usual
-        console.log(`Switched to account ${publicKey.toBase58()}`,
+        console.log(`Switched to account ${publicKey.toBase58()}`);
     } 
 });
 ```
@@ -155,7 +155,7 @@ If Phantom does not pass the public key of the new account, an application can e
 provider.on('accountChanged', (publicKey) => {
     if (publicKey) {
       // Set new public key and continue as usual
-      console.log(`Switched to account ${publicKey.toBase58()}`,
+      console.log(`Switched to account ${publicKey.toBase58()}`);
     } else {
       // Attempt to reconnect to Phantom
       provider.connect().catch((error) => {
