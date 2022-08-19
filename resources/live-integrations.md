@@ -11,3 +11,4 @@ Phantom is integrated into most major Solana projects, many of which are open so
 * [Step](https://step.finance)
 * [Mango](https://mango.markets)
 * [Bonfida](https://bonfida.com)
+* [Friktion](https://app.friktion.fi)
