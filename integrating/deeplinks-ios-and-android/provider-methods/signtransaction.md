@@ -37,7 +37,7 @@ https://phantom.app/ul/v1/signTransaction
     ```json
     // content of decrypted `data`-parameter
     {
-        transactions: "...", // signed serialized transaction, base58 encoded
+        transaction: "...", // signed serialized transaction, base58 encoded
     }
     ```
 
