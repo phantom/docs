@@ -30,11 +30,13 @@ https://phantom.app/ul/v1/signAndSendTransaction
     ```json
     {
       "transaction": "...", // serialized transaction, base58-encoded
+      "sendOptions": "..." // an optional Solana web3.js sendOptions object
       "session": "...", // token received from the connect method
     }
     ```
 
     * `transaction` **(required)**: The [transaction](https://solana-labs.github.io/solana-web3.js/classes/Transaction.html) that Phantom will sign and submit, serialized and encoded in base58.
+    * `sendOptions` (optional): An optional object that specifies options for how Phantom should submit the transaction. This object is [defined in Solana web3.js](https://solana-labs.github.io/solana-web3.js/modules.html#SendOptions).
     * `session` **(required)**: The session token received from the [Connect](connect.md) method. Please see [Handling Sessions](../handling-sessions.md) for more details.
 
 ### Returns
