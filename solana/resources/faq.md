@@ -2,7 +2,7 @@
 
 ## Why can't I access Phantom on my website?
 
-Phantom will only [inject its provider](../integrating/extension-and-in-app-browser-web-apps/detecting-the-provider.md) into websites that begin with `https://`, or if the host is `localhost` or `127.0.0.1`. If your website only uses `http://`, Phantom will not inject its provider and you will not be able to access the methods found at `window.solana`. Encrypting your web traffic and upgrading to `https://` will restore functionality.
+Phantom will only [inject its provider](../integrating-phantom/extension-and-in-app-browser-web-apps/detecting-the-provider.md) into websites that begin with `https://`, or if the host is `localhost` or `127.0.0.1`. If your website only uses `http://`, Phantom will not inject its provider and you will not be able to access the methods found at `window.solana`. Encrypting your web traffic and upgrading to `https://` will restore functionality.
 
 Phantom will also not inject it's provider into any [iframe](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe).
 

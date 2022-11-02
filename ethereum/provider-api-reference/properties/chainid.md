@@ -1,0 +1,13 @@
+# chainId
+
+## window.ethereum.chainId
+
+The chainId of the network you are currently connected to, returned as a hexadecimal string.
+
+```javascript
+const chainId = window.ethereum.chainId
+console.log(chainId)
+// "0x1"
+// hexidecimal representation of Ethereum Mainnet
+```
+
