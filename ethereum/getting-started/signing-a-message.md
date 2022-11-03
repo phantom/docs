@@ -4,8 +4,6 @@ When a web application is connected to Phantom, it can also request that the use
 
 
 
-TODO: Need to have sign modals ready to confirm these methods work
-
 ```javascript
 const message = 'To avoid digital dognappers, sign below to authenticate with CryptoCorgis.';
 const from = accounts[0];
