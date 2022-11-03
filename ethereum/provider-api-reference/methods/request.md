@@ -12,8 +12,8 @@ Returns: `Promise<unknown>`
 
 ```javascript
 const accounts = await window.ethereum.request({ 
-                                method: "eth_requestAccounts", params: [] 
-                                })
+    method: "eth_requestAccounts", params: [] 
+})
 console.log(accounts)
 // ["0xDAFEA492D9c6733ae3d56b7Ed1ADB60692c98Bc5"]
 ```
