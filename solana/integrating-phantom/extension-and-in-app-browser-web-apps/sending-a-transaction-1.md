@@ -14,7 +14,7 @@ On this page, we'll go over the following:
 2. Signing and Sending a Versioned Transaction
 3. Building an Address Lookup Table (LUT)
 4. Extending an Address Lookup Table (LUT)
-5. Signing and Sending a Versioned Transaction utilizing a LUT
+5. Signing and Sending a Versioned Transaction utilising a LUT
 
 ## Building a Versioned Transaction
 
@@ -47,11 +47,11 @@ const transactionV0 = new VersionedTransaction(messageV0);
 {% endtab %}
 {% endtabs %}
 
-Check out the `createTransferTransactionV0` function in our code sandbox for a live example of creating a versioned transaction.
+Check out the [`createTransferTransactionV0()`](https://github.com/phantom-labs/sandbox/blob/main/src/utils/createTransferTransactionV0.ts) function in our code sandbox for a live example of creating a versioned transaction.
 
 ## Signing and Sending a Versioned Transaction
 
-Once a Versioned transaction is created, it can be signed and sent via Phantom using the `signAndSendTransaction` method on the provider. It is also possible to do with `request`. In both cases, the call will return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise) for an object containing the `signature`. This is the same way a legacy transaction is sent via the Phantom provider.
+Once a Versioned transaction is created, it can be signed and sent via Phantom using the `signAndSendTransaction` method on the provider. The call will return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise) for an object containing the `signature`. This is the same way a legacy transaction is sent via the Phantom provider.
 
 {% tabs %}
 {% tab title="signAndSendTransaction()" %}
@@ -66,9 +66,9 @@ await connection.getSignatureStatus(signature);
 {% endtab %}
 {% endtabs %}
 
-You can also specify a `SendOptions` [object](https://solana-labs.github.io/solana-web3.js/modules.html#SendOptions) as a second argument into `signAndSendTransaction` or as an `options` parameter when using `request`.
+You can also specify a `SendOptions` [object](https://solana-labs.github.io/solana-web3.js/modules.html#SendOptions) as a second argument into `signAndSendTransaction()` or as an `options` parameter when using `request`.
 
-For a live demo of signing and sending a Versioned transaction, please refer to the `handleSignAndSendTransactionV0` section of our developer sandbox.
+For a live demo of signing and sending a Versioned transaction, please refer to the [`handleSignAndSendTransactionV0()`](https://github.com/phantom-labs/sandbox/blob/78dc35fe140140a961345a6af30a058e1e19a7aa/src/App.tsx#L191) section of our developer sandbox.
 
 ## Building an Address Lookup Table (LUT)
 
@@ -102,7 +102,7 @@ const lookupSignature = await signAndSendTransaction(provider, lookupTransaction
 {% endtab %}
 {% endtabs %}
 
-Please refer to the `handleSignAndSendTransactionV0WithLookupTable()` in our code sandbox for a live demo of creating a lookup table.
+Please refer to the [`handleSignAndSendTransactionV0WithLookupTable()`](https://github.com/phantom-labs/sandbox/blob/78dc35fe140140a961345a6af30a058e1e19a7aa/src/App.tsx#L218) in our code sandbox for a live demo of creating a lookup table.
 
 ## Extending an Address Lookup Table (LUT)
 
@@ -137,7 +137,7 @@ const extensionSignature = await signAndSendTransaction(provider, extensionTrans
 {% endtab %}
 {% endtabs %}
 
-Please refer to the `handleSignAndSendTransactionV0WithLookupTable()` in our code sandbox for a live demo of extending a lookup table.
+Please refer to the [`handleSignAndSendTransactionV0WithLookupTable()`](https://github.com/phantom-labs/sandbox/blob/78dc35fe140140a961345a6af30a058e1e19a7aa/src/App.tsx#L218) in our code sandbox for a live demo of extending a lookup table.
 
 ## Signing and Sending a Versioned Transaction utilizing a LUT
 
@@ -205,4 +205,4 @@ const signature = await signAndSendTransaction(provider, transactionV0);
 {% endtab %}
 {% endtabs %}
 
-Please refer to the `handleSignAndSendTransactionV0WithLookupTable()` in our code sandbox for a live demo of signing and sending a versioned transaction utilizing an Address Lookup Table.
+Please refer to the [`handleSignAndSendTransactionV0WithLookupTable()`](https://github.com/phantom-labs/sandbox/blob/78dc35fe140140a961345a6af30a058e1e19a7aa/src/App.tsx#L218) in our code sandbox for a live demo of signing and sending a versioned transaction utilizing an Address Lookup Table.
