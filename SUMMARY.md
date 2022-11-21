@@ -49,6 +49,7 @@
   * [Signing a Message](ethereum/getting-started/signing-a-message.md)
 * [Provider API Reference](ethereum/provider-api-reference/README.md)
   * [Properties](ethereum/provider-api-reference/properties/README.md)
+    * [isPhantom](ethereum/provider-api-reference/properties/isphantom.md)
     * [chainId](ethereum/provider-api-reference/properties/chainid.md)
     * [networkVersion](ethereum/provider-api-reference/properties/networkversion.md)
     * [selectedAddress](ethereum/provider-api-reference/properties/selectedaddress.md)
