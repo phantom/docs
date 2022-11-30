@@ -1,8 +1,8 @@
 # Chain Changed
 
-Event emitted upon the wallet losing connection to the RPC provider.
+Event emitted upon the dapp or wallet changing the network/chain you are connected to
 
-This is **not** a user "disconnecting" from a dapp, or otherwise revoking access between the dapp and the wallet.
+Phantom abstracts the concept of networks, and network switching. So there is no action required on your end as a dapp developer.
 
 ```typescript
 ethereum.on('chainChanged', (chainId: string) => {
