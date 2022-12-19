@@ -5,7 +5,7 @@ On October 10, 2022, Solana introduced the concept of [Versioned Transactions](h
 The goal of `v0` is to increase the maximum size of a transaction, and hence the number of accounts that can fit in a single atomic transaction. With LUTs, developers can now build transactions with a maximum of 256 accounts, as compared to the limit of 35 accounts in legacy transactions that do not utilize LUTs.
 
 {% hint style="info" %}
-For a dive deep on Versioned Transactions, LUTs, and how the above changes affect the anatomy of a transaction, you can read [this detailed guide](https://anvit.hashnode.dev/preview/6358efb0f001c905d3bc63d5).
+For a dive deep on Versioned Transactions, LUTs, and how the above changes affect the anatomy of a transaction, you can read [this detailed guide](https://anvit.hashnode.dev/versioned-transactions).
 {% endhint %}
 
 On this page, we'll go over the following:
