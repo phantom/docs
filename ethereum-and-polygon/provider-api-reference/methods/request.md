@@ -11,7 +11,7 @@ Returns: `Promise<unknown>`
 `Example:`
 
 ```javascript
-const accounts = await window.ethereum.request({ 
+const accounts = await window.phantom.ethereum.request({ 
     method: "eth_requestAccounts", params: [] 
 })
 console.log(accounts)

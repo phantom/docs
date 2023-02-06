@@ -8,7 +8,7 @@ interface connectionInfo {
 }
 
 window.ethereum.on('connect', (connectionInfo: connectionInfo) => {
-      console.log(connectionInfo.chainId)
+      console.log(connectionInfo.chainId);
       // "0x1" On Ethereum
 });
 ```

@@ -9,7 +9,7 @@ Parameters: None
 Returns: Boolean
 
 ```typescript
-window.ethereum.isConnected()
+window.phantom.ethereum.isConnected()
 // true if connected
 // false if not
 ```

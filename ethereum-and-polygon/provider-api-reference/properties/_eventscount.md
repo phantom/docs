@@ -1,12 +1,12 @@
 # \_eventsCount
 
-## window.ethereum.\_eventsCount
+## window.phantom.ethereum.\_eventsCount
 
 An object containing the number of events that have happened
 
 ```javascript
-const eventsCount = window.ethereum._eventsCount
-console.log(eventsCount)
+const eventsCount = window.phantom.ethereum._eventsCount;
+console.log(eventsCount);
 // 2
 ```
 

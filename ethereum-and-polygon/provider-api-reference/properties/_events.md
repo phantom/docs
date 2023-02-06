@@ -1,12 +1,12 @@
 # \_events
 
-## window.ethereum.\_events
+## window.phantom.ethereum.\_events
 
 An object containing all of the events that the provider has emitted or logged.
 
 ```javascript
-const events = window.ethereum._events
-console.log(events)
+const events = window.phantom.ethereum._events;
+console.log(events);
 // Events {chainChanged: Array(2), accountsChanged: EE}
 ```
 

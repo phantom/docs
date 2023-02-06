@@ -49,21 +49,21 @@ Phantom allows users to seamlessly manage multiple accounts (i.e. addresses) fro
 If a user changes accounts while already connected to an application, and the new account had already whitelisted that application, then the user will stay connected and Phantom will pass the public key of the new account:
 
 ```typescript
-provider.on('accountsChanged', (publicKey: String) => {
-    if (publicKey) {
+provider.on('accountsChanged', (publicKeys: String[]) => {
+    if (publicKeys) {
         // Set new public key and continue as usual
-        console.log(`Switched to account ${publicKey}`);
+        console.log(`Switched to account ${publicKeys[0]}`);
     } 
 });
 ```
 
 If Phantom does not pass the public key of the new account, an application can either do nothing or attempt to reconnect:
 
-```javascript
-provider.on('accountChanged', (publicKey) => {
-    if (publicKey) {
+```typescript
+provider.on('accountsChanged', (publicKeys: String[]) => {
+    if (publicKeys) {
       // Set new public key and continue as usual
-      console.log(`Switched to account ${publicKey.toBase58()}`);
+      console.log(`Switched to account ${publicKeys[0].toBase58()}`);
     } else {
       // Attempt to reconnect to Phantom
       provider.request({ method: "eth_requestAccounts" }).catch((error) => {
