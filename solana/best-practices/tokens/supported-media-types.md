@@ -10,6 +10,7 @@ Phantom supports a range of token media types, including images, audio files, vi
 * `.jpg`
 * `.png`
 * `.gif`
+* `.svg`
 
 #### Video
 

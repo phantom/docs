@@ -1,6 +1,6 @@
 # Collectibles (NFTs & Semi-Fungibles)
 
-On Solana, NFTs are often thought of as [SPL Tokens](https://spl.solana.com/token#example-create-a-non-fungible-token) with 0 decimals and a supply of 1. According to the [Token Metadata Standard](https://docs.metaplex.com/programs/token-metadata/overview), however, it is possible for a range of different tokens to have NFT-like characteristics. Phantom refers to all NFT-like tokens as **collectibles** and will display them separately from `Fungible` tokens that appear on the Home tab. Specifically, Phantom will display all `FungibleAsset`, `NonFungible`, and `NonFungibleEdition` tokens on their own Collectibles tab.
+On Solana, NFTs are often thought of as [SPL Tokens](https://spl.solana.com/token#example-create-a-non-fungible-token) with 0 decimals and a supply of 1. According to the [Token Metadata Standard](https://docs.metaplex.com/programs/token-metadata/overview), however, it is possible for a range of different tokens to have NFT-like characteristics. Phantom refers to all NFT-like tokens as **collectibles** and will display them separately from `Fungible` tokens that appear on the Home tab. Specifically, Phantom will display all `FungibleAsset`, `NonFungible`, `NonFungibleEdition` and `ProgrammableNonFungible` tokens on their own Collectibles tab.
 
 ### Grouping Collectibles
 
@@ -38,12 +38,12 @@ Phantom supports a wide-range of media types. For a full list, please refer to:
 
 When determining what media to display for a given collectible, Phantom will search the off-chain JSON for data in the following order of preference:
 
-1. `properties.files` — Phantom will choose the first file where the `cdn` property is set to `true`. Otherwise, a file will be chosen based on the media type in the following order of preference:
-   1. `vr` or `model`
-   2. `video`
-   3. `audio`
-   4. `image`
-2. `animation_url` — If no files are found, Phantom will select the media source at the collectible's `animation_url` field.
+1. `animation_url` — Phantom will select the media source at the collectible's `animation_url` field.
+2. `properties.files` — If no `animation_url` is found, Phantom will choose the first file where the `cdn` property is set to `true`. Otherwise, a file will be chosen based on the media type in the following order of preference:
+   1. `image`
+   2. `audio`
+   3. `video`
+   4. `vr` or `model`
 3. `image` — Finally, if Phantom still cannot find media to display, it will fallback to the media source at the collectible's `image` field.
 
 **Determining Media Type**

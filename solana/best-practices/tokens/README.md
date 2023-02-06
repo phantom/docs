@@ -18,6 +18,7 @@ Phantom will categorize and display tokens based on their [Token Standard](https
 * `FungibleAsset`: A token with metadata that can also have NFT-like attributes. Commonly referred to as Semi-Fungible, these tokens are often used in gaming contexts to support stackable items like a piece of wood.
 * `NonFungible`: A non-fungible token with a [Master Edition](https://docs.metaplex.com/programs/token-metadata/accounts#master-edition) account. This is the most popular type of NFT, encompassing well known collections like [Solana Monkey Business](https://solanamonkey.business/) and [DeGods](https://www.degods.com/).
 * `NonFungibleEdition`: A non-fungible token with an [Edition](https://docs.metaplex.com/programs/token-metadata/accounts#edition) account (printed from a Master Edition). This is a helpful feature for creators who want to offer multiple copies of their 1/1 NFTs.
+* `ProgrammableNonFungible`: A new non-fungible asset class which allows for flexible configuration of various lifecycle rules triggered by specific actions. More info about Programmable NFTs or pNFTs can be found [here](https://github.com/metaplex-foundation/metaplex-program-library/blob/master/token-metadata/program/ProgrammableNFTGuide.md).
 
 If no `tokenStandard` is set, Phantom will fallback to categorizing tokens based on the following logic:
 
