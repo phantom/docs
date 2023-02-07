@@ -1,11 +1,11 @@
 # isPhantom
 
-## window.phantom.ethereum.isPhantom
+## window.ethereum.isPhantom
 
 A boolean that identifies if Phantom is installed.
 
-```javascript
-const isPhantomInstalled = window.phantom?.ethereum?.isPhantom;
+```typescript
+const isPhantomInstalled = window.ethereum?.isPhantom;
 console.log(isPhantomInstalled);
 // true
 ```

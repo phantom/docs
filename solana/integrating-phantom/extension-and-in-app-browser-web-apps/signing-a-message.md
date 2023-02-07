@@ -83,58 +83,6 @@ The Sign In With X standard is defined by [CAIP-122](https://github.com/ChainAgn
 While CAIP-122 is technically chain-agnostic, only Ethereum and Solana parsing are supported at this time.
 {% endhint %}
 
-#### Ethereum Example
-
-{% tabs %}
-{% tab title="signMessage()" %}
-```javascript
-const provider = getProvider(); // see "Detecting the Provider"
-const message = `magiceden.io wants you to sign in with your Ethereum account:
-eip155:1:0xb9c5714089478a327f09197987f16f9e5d936e8a
-
-Click Sign or Approve only means you have proved this wallet is owned by you.
-
-URI: https://magiceden.io
-Version: 1
-Chain ID: eip155:1
-Nonce: bZQJ0SL6gJ
-Issued At: 2022-10-25T16:52:02.748Z
-Resources:
-- https://foo.com
-- https://bar.com`;
-const encodedMessage = new TextEncoder().encode(message);
-const signedMessage = await provider.signMessage(encodedMessage, "utf8");
-```
-{% endtab %}
-
-{% tab title="request()" %}
-```javascript
-const provider = getProvider(); // see "Detecting the Provider"
-const message = `magiceden.io wants you to sign in with your Ethereum account:
-eip155:1:0xb9c5714089478a327f09197987f16f9e5d936e8a
-
-Click Sign or Approve only means you have proved this wallet is owned by you.
-
-URI: https://magiceden.io
-Version: 1
-Chain ID: eip155:1
-Nonce: bZQJ0SL6gJ
-Issued At: 2022-10-25T16:52:02.748Z
-Resources:
-- https://foo.com
-- https://bar.com`;
-const encodedMessage = new TextEncoder().encode(message);
-const signedMessage = await provider.request({
-    method: "signMessage",
-    params: {
-         message: encodedMessage,
-         display: "utf8",
-    
-});
-```
-{% endtab %}
-{% endtabs %}
-
 #### Solana Example
 
 {% tabs %}
@@ -170,62 +118,6 @@ Click Sign or Approve only means you have proved this wallet is owned by you.
 URI: https://magiceden.io
 Version: 1
 Chain ID: solana:mainnet
-Nonce: bZQJ0SL6gJ
-Issued At: 2022-10-25T16:52:02.748Z
-Resources:
-- https://foo.com
-- https://bar.com`;
-const encodedMessage = new TextEncoder().encode(message);
-const signedMessage = await provider.request({
-    method: "signMessage",
-    params
-         message: encodedMessage,
-         display: "utf8",
-    
-});
-```
-{% endtab %}
-{% endtabs %}
-
-### Sign In With Ethereum
-
-The Sign In With Ethereum standard is defined by [EIP-4361](https://eips.ethereum.org/EIPS/eip-4361).
-
-#### Example
-
-{% tabs %}
-{% tab title="signMessage()" %}
-```javascript
-const provider = getProvider(); // see "Detecting the Provider"
-const message = `magiceden.io wants you to sign in with your Ethereum account:
-0xb9c5714089478a327f09197987f16f9e5d936e8a
-
-Click Sign or Approve only means you have proved this wallet is owned by you.
-
-URI: https://magiceden.io
-Version: 1
-Chain ID: 1
-Nonce: bZQJ0SL6gJ
-Issued At: 2022-10-25T16:52:02.748Z
-Resources:
-- https://foo.com
-- https://bar.com`;
-const encodedMessage = new TextEncoder().encode(message);
-const signedMessage = await provider.signMessage(encodedMessage, "utf8");
-```
-{% endtab %}
-
-{% tab title="request()" %}
-```javascript
-const provider = getProvider(); // see "Detecting the Provider"
-const message = `magiceden.io wants you to sign in with your Ethereum account:
-0xb9c5714089478a327f09197987f16f9e5d936e8a
-
-Click Sign or Approve only means you have proved this wallet is owned by you.
-
-URI: https://magiceden.io
-Version: 1
-Chain ID: 1
 Nonce: bZQJ0SL6gJ
 Issued At: 2022-10-25T16:52:02.748Z
 Resources:

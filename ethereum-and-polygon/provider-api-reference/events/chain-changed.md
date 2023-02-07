@@ -6,7 +6,7 @@ Phantom abstracts the concept of networks, and network switching. So there is no
 
 ```typescript
 ethereum.on('chainChanged', (chainId: string) => {
-  console.log(chainId);
+  console.log(chainId)
   // "0x1" on Ethereum
   /* Phantom will handle all of the internal changes needed to handle the new chain.
    * As the dapp developer, 
