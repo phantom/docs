@@ -9,7 +9,7 @@ In order to send a message for the user to sign, a web application must:&#x20;
 
 The [`handleSignMessage` section of our developer sandbox](https://github.com/phantom-labs/sandbox/blob/b57fdd0e65ce4f01290141a01e33d17fd2f539b9/src/App.tsx#L242) provides an example of signing a message.
 
-{% hint style="warning" %}
+{% hint style="info" %}
 For more information on how to verify the signature of a message, please refer to [tweetnacl-js](https://github.com/dchest/tweetnacl-js/blob/master/README.md#naclsigndetachedverifymessage-signature-publickey).
 {% endhint %}
 
@@ -72,8 +72,6 @@ Resources:
 ```
 
 <table><thead><tr><th>Name</th><th>Type</th><th data-type="checkbox">Required?</th><th>Description</th></tr></thead><tbody><tr><td><code>domain</code></td><td><code>string</code></td><td>true</td><td>The authority that is requesting the signing.</td></tr><tr><td><code>address</code></td><td><code>string</code></td><td>true</td><td>The blockchain address that is performing the signing.</td></tr><tr><td><code>statement</code></td><td><code>string</code></td><td>false</td><td>A human-readable ASCII assertion that the user will sign. It <em>MUST NOT</em> contain <code>\n</code>.</td></tr><tr><td><code>uri</code></td><td><code>string</code></td><td>true</td><td>A URI referring to the resource that is the subject of the signing (i.e. the subject of the claim).</td></tr><tr><td><code>version</code></td><td><code>string</code></td><td>true</td><td>The current version of the message.</td></tr><tr><td><code>chain-id</code></td><td><code>string</code></td><td>true</td><td>The Chain ID to which the session is bound, and the network where Contract Accounts MUST be resolved.</td></tr><tr><td><code>nonce</code></td><td><code>string</code></td><td>true</td><td>A randomized token to prevent signature replay attacks.</td></tr><tr><td><code>issued-at</code></td><td><code>string</code></td><td>true</td><td>The issuance time.</td></tr><tr><td><code>expiration-time</code></td><td><code>string</code></td><td>false</td><td>The time at which the signed authentication message is no longer valid.</td></tr><tr><td><code>not-before</code></td><td><code>string</code></td><td>false</td><td>The time at which the signed authentication message starts being valid.</td></tr><tr><td><code>request-id</code></td><td><code>string</code></td><td>false</td><td>A system-specific identifier used to uniquely refer to the authentication request.</td></tr><tr><td><code>resources</code></td><td><code>string[]</code></td><td>false</td><td>A list of uris the user wishes to have resolved as part of the authentication by the relying party.</td></tr></tbody></table>
-
-For a live example of how Phantom validates these required fields, check out our [SIW Sandbox](https://2hgl5z.csb.app/).
 
 ### Sign In With X
 
