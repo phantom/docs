@@ -2,7 +2,7 @@
 
 This tutorial is a step-by-step guide on how to integrate a wallet such as Phantom into your dapp using the [Web3-Onboard](https://onboard.blocknative.com/) library.
 
-We will be going through step by step how to go from 0 to a fully integrated Web3-Onboard button. If you already have a dapp that you are trying to integrate Phantom in, you can use the [our project](https://github.com/phantom-labs/Web3-Onboard-Integration.git) as reference.
+We will be going through step by step how to go from 0 to a fully integrated Web3-Onboard button. If you already have a dapp that you are trying to integrate Phantom in, you can use [our project](https://github.com/phantom-labs/Web3-Onboard-Integration.git) as reference.
 
 ### Prerequisites
 
@@ -17,7 +17,7 @@ We recommend using [Vite](https://vitejs.dev/) to create new react applications.
 To create a new React application using Vite, run the following command in your terminal:
 
 ```sh
-yarn create vite@latest
+yarn create vite
 ```
 
 1. This will ask you for a project name. Provide it a name here. For purposes of this tutorial I used "Web3-onboard-Sandbox".
