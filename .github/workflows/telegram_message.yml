@@ -1,0 +1,16 @@
+on:
+  discussion_comment:
+    types: [created]
+
+jobs:
+  post_to_telegram:
+    if: github.event.discussion.category.name == 'Announcements'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send message to Telegram
+        uses: appleboy/telegram-action@2e9996f96e095a537aa4442da4af41ca7b594fba
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            New post in GitHub Discussions: [${{ github.event.discussion.title }}](${{ github.event.comment.html_url }})
