@@ -1,5 +1,5 @@
 on:
-  discussion_comment:
+  discussion:
     types: [created]
 
 jobs:
@@ -13,4 +13,4 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            New post in GitHub Discussions: [${{ github.event.discussion.title }}](${{ github.event.comment.html_url }})
+            New post in GitHub Discussions: [${{ github.event.discussion.title }}](${{ github.event.discussion.html_url }})
