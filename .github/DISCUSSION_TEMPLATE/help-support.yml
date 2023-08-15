@@ -1,4 +1,8 @@
 body:
+  - type: markdown
+    attributes:
+      value: |
+        > NOTE: This page is intended for **developer support only**! If you have an issue with using Phantom for non-development purposes, please [open a ticket](https://help.phantom.app/hc/requests/new) with our support team.
   - type: textarea
     attributes:
       label: Summary
