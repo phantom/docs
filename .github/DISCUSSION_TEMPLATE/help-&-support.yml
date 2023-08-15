@@ -1,0 +1,32 @@
+body:
+  - type: textarea
+    attributes:
+      label: Summary
+      description: A concise description of the issue you're facing.
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Example
+      description: Share a link to a site where we can reproduce to the issue.
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Steps to Reproduce
+      description: Let us know how we can replicate the problem. Please include code, error messages, screenshots, or any other details needed to help us see exactly what is happening.
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Phantom Version
+      description: If applicable, please share the version of Phantom you're using.
+    validations:
+      required: false
+  - type: checkboxes
+    attributes:
+      label: Is there an existing discussion for this?
+      description: Please search to see if a discussion already exists for the issue you're facing.
+      options:
+        - label: I have searched the existing discussions
+          required: true
