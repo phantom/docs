@@ -12,18 +12,18 @@ body:
   - type: input
     attributes:
       label: dApp URL
-      description: URL that your dApp is hosted at.
+      description: URL that your dApp is hosted at
     validations:
       required: true
   - type: input
     attributes:
       label: Program ID
-      description: Program that produces this warning.
+      description: Program ID that produces this warning
     validations:
       required: true
   - type: textarea
     attributes:
       label: Steps to reproduce
-      description: Please provide all necessary steps and information necessary to reproduce the warning.
+      description: Please provide all necessary steps and information to reproduce the warning.
     validations:
       required: true
