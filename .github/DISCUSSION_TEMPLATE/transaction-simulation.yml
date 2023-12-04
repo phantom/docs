@@ -1,0 +1,29 @@
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > NOTE: This page is intended for **developer support only**! If you have an issue with using Phantom for non-development purposes, please [open a ticket](https://help.phantom.app/hc/requests/new) with our support team.
+  - type: input
+    attributes:
+      label: dApp Name
+      description: Name of your dApp
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: dApp URL
+      description: URL that your dApp is hosted at.
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Program ID
+      description: Program that produces this warning.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Steps to reproduce
+      description: Please provide all necessary steps and information necessary to reproduce the warning.
+    validations:
+      required: true
