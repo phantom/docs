@@ -3,7 +3,7 @@
 <figure><img src="../.gitbook/assets/Developer Settings.png" alt=""><figcaption></figcaption></figure>
 
 
-Developers can configure the following testnets in testnet mode. To access go to Settings -> Developer Settings in Phantom:
+Developers can access test networks via Settings -> Developer Settings in Phantom. The following testnets are available:
 
 * Solana
   * Solana Localnet (browser extension only)
