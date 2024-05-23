@@ -85,7 +85,7 @@ useEffect(() => {
     provider.connect({ onlyIfTrusted: true })
         .then(({ publicKey }) => {
             // Handle successful eager connection
-        });
+        })
         .catch(() => {
             // Handle connection failure as usual
         })
