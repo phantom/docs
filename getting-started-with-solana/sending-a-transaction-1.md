@@ -66,7 +66,7 @@ await connection.getSignatureStatus(signature);
 {% endtab %}
 {% endtabs %}
 
-You can also specify a `SendOptions` [object](https://solana-labs.github.io/solana-web3.js/modules.html#SendOptions) as a second argument into `signAndSendTransaction()` or as an `options` parameter when using `request`.
+You can also specify a `SendOptions` [object](https://solana-labs.github.io/solana-web3.js/v1.x/modules.html#SendOptions) as a second argument into `signAndSendTransaction()` or as an `options` parameter when using `request`.
 
 For a live demo of signing and sending a Versioned transaction, please refer to the [`handleSignAndSendTransactionV0()`](https://github.com/phantom-labs/sandbox/blob/78dc35fe140140a961345a6af30a058e1e19a7aa/src/App.tsx#L191) section of our developer sandbox.
 
@@ -76,7 +76,7 @@ Address Lookup Tables (LUTs) can be used to load accounts into table-like data s
 
 This lookup method effectively "_compresses_" a 32-byte address into a 1-byte index value. This "_compression_" enables storing up to 256 address in a single lookup table for use inside any given transaction.
 
-With the `@solana/web3.js` [`createLookupTable`](https://solana-labs.github.io/solana-web3.js/classes/AddressLookupTableProgram.html#createLookupTable) function, developers can construct the instruction needed to create a new lookup table, as well as determine its address. Once we have the lookup table instruction, we can construct a transaction, sign it, and send it to create a lookup table on-chain. Address lookup tables can be created with either a `v0` transaction or a `legacy` transaction. However, the Solana runtime can only retrieve and handle the additional addresses within a lookup table while using `v0` transactions.
+With the `@solana/web3.js` [`createLookupTable`](https://solana-labs.github.io/solana-web3.js/v1.x/classes/AddressLookupTableProgram.html#createLookupTable) function, developers can construct the instruction needed to create a new lookup table, as well as determine its address. Once we have the lookup table instruction, we can construct a transaction, sign it, and send it to create a lookup table on-chain. Address lookup tables can be created with either a `v0` transaction or a `legacy` transaction. However, the Solana runtime can only retrieve and handle the additional addresses within a lookup table while using `v0` transactions.
 
 Here's a code snippet that creates a Lookup Table.
 
@@ -106,7 +106,7 @@ Please refer to the [`handleSignAndSendTransactionV0WithLookupTable()`](https://
 
 ## Extending an Address Lookup Table (LUT)
 
-Once an Address Lookup Table is created, it can then be extended (i.e. accounts can be appended to the table). Using the `@solana/web3.js` library, you can create a new `extend` instruction using the [`extendLookupTable`](https://solana-labs.github.io/solana-web3.js/classes/AddressLookupTableProgram.html#extendLookupTable) method. Once the extend instruction is created, it can be sent in a transaction.
+Once an Address Lookup Table is created, it can then be extended (i.e. accounts can be appended to the table). Using the `@solana/web3.js` library, you can create a new `extend` instruction using the [`extendLookupTable`](https://solana-labs.github.io/solana-web3.js/v1.x/classes/AddressLookupTableProgram.html#extendLookupTable) method. Once the extend instruction is created, it can be sent in a transaction.
 
 {% tabs %}
 {% tab title="extendAddressLookupTable()" %}

@@ -57,7 +57,7 @@ curl http://localhost:8899 -X POST -H "Content-Type: application/json" -d \
 
 ```
 
-You can also do the same using the [`@solana/web3.js`](https://solana-labs.github.io/solana-web3.js/) library.
+You can also do the same using the [`@solana/web3.js`](https://solana-labs.github.io/solana-web3.js/v1.x/) library.
 
 ```javascript
 // connect to the `devnet` cluster and get the current `slot`

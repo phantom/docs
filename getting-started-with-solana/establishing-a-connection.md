@@ -136,9 +136,9 @@ useEffect(() => {
 
 ## Changing Accounts
 
-Phantom allows users to seamlessly manage multiple accounts (i.e. [Keypairs](https://solana-labs.github.io/solana-web3.js/classes/Keypair.html)) from within a single extension or mobile app. Whenever a user switches accounts, Phantom will emit an `accountChanged` event.
+Phantom allows users to seamlessly manage multiple accounts (i.e. [Keypairs](https://solana-labs.github.io/solana-web3.js/v1.x/classes/Keypair.html)) from within a single extension or mobile app. Whenever a user switches accounts, Phantom will emit an `accountChanged` event.
 
-If a user changes accounts while already connected to an application, and the new account had already whitelisted that application, then the user will stay connected and Phantom will pass the [PublicKey](https://solana-labs.github.io/solana-web3.js/classes/PublicKey.html) of the new account:
+If a user changes accounts while already connected to an application, and the new account had already whitelisted that application, then the user will stay connected and Phantom will pass the [PublicKey](https://solana-labs.github.io/solana-web3.js/v1.x/classes/PublicKey.html) of the new account:
 
 ```javascript
 provider.on('accountChanged', (publicKey) => {
