@@ -62,7 +62,7 @@
 * [Provider Methods](phantom-deeplinks/provider-methods/README.md)
   * [Connect](phantom-deeplinks/provider-methods/connect.md)
   * [Disconnect](phantom-deeplinks/provider-methods/disconnect.md)
-  * [SignAndSendTransaction](phantom-deeplinks/provider-methods/signandsendtransaction.md)
+  * [SignAndSendTransaction (Deprecated)](phantom-deeplinks/provider-methods/signandsendtransaction.md)
   * [SignAllTransactions](phantom-deeplinks/provider-methods/signalltransactions.md)
   * [SignTransaction](phantom-deeplinks/provider-methods/signtransaction.md)
   * [SignMessage](phantom-deeplinks/provider-methods/signmessage.md)
