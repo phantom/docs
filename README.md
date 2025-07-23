@@ -3,6 +3,8 @@ cover: .gitbook/assets/phantom-background.jpeg
 coverY: -50.54759898904802
 ---
 
+# Superseeded by https://github.com/phantom/docs-v2
+
 # Introduction
 
 **Phantom** is a crypto wallet that can be used to manage digital assets and access decentralized applications on [Solana](https://solana.com/), [Polygon](https://polygon.technology/), and [Ethereum](https://ethereum.org/en/).&#x20;
