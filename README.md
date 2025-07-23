@@ -3,7 +3,7 @@ cover: .gitbook/assets/phantom-background.jpeg
 coverY: -50.54759898904802
 ---
 
-# Superseeded by https://github.com/phantom/docs-v2
+# Superseded by https://github.com/phantom/docs-v2
 
 # Introduction
 
