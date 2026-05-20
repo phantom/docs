@@ -1,2 +1,0 @@
-# Ethereum & Polygon
-

@@ -57,11 +57,6 @@
 * [Encryption](phantom-deeplinks/encryption.md)
 * [Limitations](phantom-deeplinks/limitations.md)
 
-## 🤝 Integrating with Libraries
-
-* [Ethereum & Polygon](integrating-with-libraries/ethereum-and-polygon/README.md)
-  * [Integrating with Web3-Onboard](integrating-with-libraries/ethereum-and-polygon/integrating-with-web3-onboard.md)
-
 ## 🛠 Development Powertools
 
 * [Phantom Blocklist](development-powertools/blocklist.md)
