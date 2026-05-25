@@ -53,7 +53,7 @@ For a live demo of `signAndSendTransaction`, please refer to the [`handleSignAnd
 
 ## Other Signing Methods
 
-The following methods are also supported, but are not recommended over `signAndSendTransaction`. It is safer for users, and a simpler API for developers, for Phantom to submit the transaction immediately after signing it instead of relying on the application to do so. If you use the methods below, Phantom will display a warning message to users.
+The following methods are also supported, but are not recommended over `signAndSendTransaction`. It is safer for users, and a simpler API for developers, for Phantom to submit the transaction immediately after signing it instead of relying on the application to do so. Using `signAndSendTransaction` also keeps Phantom's pre-sign simulation and network submission in the same RPC context, which reduces misleading simulation warnings—especially on devnet. If you use the methods below, Phantom will display a warning message to users.
 
 ### Signing a Transaction (Without Sending)
 
@@ -87,6 +87,16 @@ const signature = await connection.sendRawTransaction(signedTransaction.serializ
 ```
 {% endtab %}
 {% endtabs %}
+
+{% hint style="warning" %}
+Phantom simulates every transaction before displaying the approval dialog. On **Solana devnet**, you may see:
+
+> "This transaction reverted during simulation. Funds may be lost if submitted."
+
+even when the transaction is valid and succeeds after signing. This is most common when using `signTransaction` and broadcasting through your own RPC connection.
+
+Before prompting the user to sign, simulate the transaction locally and verify your dapp RPC network matches Phantom's Testnet Mode setting. See [Devnet simulation warnings](../resources/faq.md#why-does-phantom-show-transaction-reverted-during-simulation-on-devnet) for a full diagnostic checklist.
+{% endhint %}
 
 Please refer to the [`handleSignTransaction` section of our developer sandbox](https://github.com/phantom-labs/sandbox/blob/b57fdd0e65ce4f01290141a01e33d17fd2f539b9/src/App.tsx#L187) for an example of `signTransaction`.
 
