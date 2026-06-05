@@ -9,7 +9,7 @@ In order to send a transaction, a web application must:
 3. Optionally await network confirmation using a Solana JSON RPC connection.
 
 {% hint style="info" %}
-For more information about the nature of Solana transactions, please review the [`solana-web3.js` docs](https://solana-labs.github.io/solana-web3.js/) as well as the [Solana Cookbook](https://solanacookbook.com/core-concepts/transactions.html#transactions).
+For more information about the nature of Solana transactions, please review the [`solana-web3.js` docs](https://solana-labs.github.io/solana-web3.js/v1.x/) as well as the [Solana Cookbook](https://solanacookbook.com/core-concepts/transactions.html#transactions).
 {% endhint %}
 
 For a sample Phantom transaction, check out our [developer sandbox](https://github.com/phantom-labs/sandbox/blob/b57fdd0e65ce4f01290141a01e33d17fd2f539b9/src/App.tsx#L160).
@@ -47,7 +47,7 @@ await connection.getSignatureStatus(signature);
 {% endtab %}
 {% endtabs %}
 
-You can also specify a `SendOptions` [object](https://solana-labs.github.io/solana-web3.js/modules.html#SendOptions) as a second argument into `signAndSendTransaction` or as an `options` parameter when using `request`.
+You can also specify a `SendOptions` [object](https://solana-labs.github.io/solana-web3.js/v1.x/modules.html#SendOptions) as a second argument into `signAndSendTransaction` or as an `options` parameter when using `request`.
 
 For a live demo of `signAndSendTransaction`, please refer to the [`handleSignAndSendTransaction` section of our developer sandbox](https://github.com/phantom-labs/sandbox/blob/b57fdd0e65ce4f01290141a01e33d17fd2f539b9/src/App.tsx#L160).
 
@@ -57,7 +57,7 @@ The following methods are also supported, but are not recommended over `signAndS
 
 ### Signing a Transaction (Without Sending)
 
-Once a transaction is created, a web application may ask the user's Phantom wallet to sign the transaction _without_ also submitting it to the network. The easiest and most recommended way of doing this is via the `signTransaction` method on the provider, but it is also possible to do via `request`. In both cases, the call will return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise) for the signed transaction. After the transaction has been signed, an application may submit the transaction itself via [web3js's `sendRawTransaction`](https://solana-labs.github.io/solana-web3.js/classes/Connection.html#sendRawTransaction).
+Once a transaction is created, a web application may ask the user's Phantom wallet to sign the transaction _without_ also submitting it to the network. The easiest and most recommended way of doing this is via the `signTransaction` method on the provider, but it is also possible to do via `request`. In both cases, the call will return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise) for the signed transaction. After the transaction has been signed, an application may submit the transaction itself via [web3js's `sendRawTransaction`](https://solana-labs.github.io/solana-web3.js/v1.x/classes/Connection.html#sendRawTransaction).
 
 {% tabs %}
 {% tab title="signTransaction()" %}

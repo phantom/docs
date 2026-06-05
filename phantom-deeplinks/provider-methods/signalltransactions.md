@@ -1,6 +1,6 @@
 # SignAllTransactions
 
-Once an app is connected, it is also possible to sign multiple transactions at once. Unlike [SignAndSendTransaction](signandsendtransaction.md), Phantom will not submit these transactions to the network. Applications can submit signed transactions using [web3.js's `sendRawTransaction`](https://solana-labs.github.io/solana-web3.js/classes/Connection.html#sendRawTransaction).&#x20;
+Once an app is connected, it is also possible to sign multiple transactions at once. Unlike [SignAndSendTransaction](signandsendtransaction.md), Phantom will not submit these transactions to the network. Applications can submit signed transactions using [web3.js's `sendRawTransaction`](https://solana-labs.github.io/solana-web3.js/v1.x/classes/Connection.html#sendRawTransaction).&#x20;
 
 ### Base URL
 
@@ -25,7 +25,7 @@ https://phantom.app/ul/v1/signAllTransactions
     }
     ```
 
-    * `transactions` **(required)**: An array of [transactions](https://solana-labs.github.io/solana-web3.js/classes/Transaction.html) that Phantom will sign, serialized and encoded in base58.
+    * `transactions` **(required)**: An array of [transactions](https://solana-labs.github.io/solana-web3.js/v1.x/classes/Transaction.html) that Phantom will sign, serialized and encoded in base58.
     * `session` **(required)**: The session token received from the [Connect](connect.md) method. Please see [Handling Sessions](../handling-sessions.md) for more details.
 
 ### Returns
@@ -45,7 +45,7 @@ https://phantom.app/ul/v1/signAllTransactions
     }
     ```
 
-    * `transactions`: An array of signed, serialized transactions that are base58 encoded. Phantom will not submit these transactions. Applications can submit these transactions themselves via [web3.js's `sendRawTransaction`](https://solana-labs.github.io/solana-web3.js/classes/Connection.html#sendRawTransaction).&#x20;
+    * `transactions`: An array of signed, serialized transactions that are base58 encoded. Phantom will not submit these transactions. Applications can submit these transactions themselves via [web3.js's `sendRawTransaction`](https://solana-labs.github.io/solana-web3.js/v1.x/classes/Connection.html#sendRawTransaction).&#x20;
 
 #### :x:Reject
 

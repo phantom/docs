@@ -9,7 +9,7 @@ In order to send a transaction, an application must:
 3. Optionally await network confirmation using a Solana JSON RPC connection.
 
 {% hint style="info" %}
-For more information about the nature of Solana transactions, please review the [`solana-web3.js` docs](https://solana-labs.github.io/solana-web3.js/) as well as the [Solana Cookbook](https://solanacookbook.com/core-concepts/transactions.html#transactions).
+For more information about the nature of Solana transactions, please review the [`solana-web3.js` docs](https://solana-labs.github.io/solana-web3.js/v1.x/) as well as the [Solana Cookbook](https://solanacookbook.com/core-concepts/transactions.html#transactions).
 {% endhint %}
 
 For a sample transaction using Phantom deeplinks, check out our [deeplinking demo app](../../resources/sandbox.md#deeplinking-demo-app).
@@ -35,8 +35,8 @@ https://phantom.app/ul/v1/signAndSendTransaction
     }
     ```
 
-    * `transaction` **(required)**: The [transaction](https://solana-labs.github.io/solana-web3.js/classes/Transaction.html) that Phantom will sign and submit, serialized and encoded in base58.
-    * `sendOptions` (optional): An optional object that specifies options for how Phantom should submit the transaction. This object is [defined in Solana web3.js](https://solana-labs.github.io/solana-web3.js/modules.html#SendOptions).
+    * `transaction` **(required)**: The [transaction](https://solana-labs.github.io/solana-web3.js/v1.x/classes/Transaction.html) that Phantom will sign and submit, serialized and encoded in base58.
+    * `sendOptions` (optional): An optional object that specifies options for how Phantom should submit the transaction. This object is [defined in Solana web3.js](https://solana-labs.github.io/solana-web3.js/v1.x/modules.html#SendOptions).
     * `session` **(required)**: The session token received from the [Connect](connect.md) method. Please see [Handling Sessions](../handling-sessions.md) for more details.
 
 ### Returns
